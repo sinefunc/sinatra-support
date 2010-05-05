@@ -23,6 +23,12 @@ Bare minimum, close to the metal helpers for your average sinatra application.
       - e.on [:password, :not_present] "A password is required"
       - e.on [:password, :not_confirmed] "You must confirm your password"
 
+== TODOS: 
+
+- write extensive enough tests for it
+- more helpers which will appear gradually as more projects are built on top
+  of ohm, monk.
+
 == Note on Patches/Pull Requests
  
 * Fork the project.
