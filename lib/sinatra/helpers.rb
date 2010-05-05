@@ -1,4 +1,5 @@
 require 'date'
+require 'sinatra/helpers/compat-1.8.6'
 
 module Sinatra
   module Helpers
@@ -11,7 +12,7 @@ module Sinatra
 
     def month_choices
       Date::MONTHNAMES.map.
-        with_index { |month, i| ["%d - %s" % [i, month], i] }.
+        with_index { |month, idx| ["%d - %s" % [idx, month], idx] }.
         tap        { |arr| arr.shift }
     end
 
