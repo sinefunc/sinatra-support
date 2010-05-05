@@ -1,6 +1,27 @@
 = sinatra-helpers
 
-Description goes here.
+Bare minimum, close to the metal helpers for your average sinatra application.
+
+== Examples
+    
+    %select(name='card[month'])
+      != month_choices
+
+    %select(name='card[year'])
+      != year_choices
+  
+    %select(name='address[country]')
+      != country_choices
+  
+    # If you have an ohm model which you want to present the errors of:
+    # (this is taken from the reddit-clone courtesy of citrusbyte)
+    
+    # This should be put in your HAML file
+
+    - errors_on @user do |e|
+      - e.on [:email, :not_present] "You must supply an email address"
+      - e.on [:password, :not_present] "A password is required"
+      - e.on [:password, :not_confirmed] "You must confirm your password"
 
 == Note on Patches/Pull Requests
  
