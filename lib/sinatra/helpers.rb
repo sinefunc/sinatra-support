@@ -9,10 +9,15 @@ module Sinatra
     def country_choices
       Country.to_select
     end
+    
+    def day_choices
+      days = (1..31).to_a
+      days.zip(days)
+    end
 
     def month_choices
       Date::MONTHNAMES.map.
-        with_index { |month, idx| ["%d - %s" % [idx, month], idx] }.
+        with_index { |month, idx| [month, idx] }.
         tap        { |arr| arr.shift }
     end
 
