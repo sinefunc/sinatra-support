@@ -26,7 +26,9 @@ module Sinatra
       years.zip(years)
     end
 
-    def select_options(pairs, current)
+    def select_options(pairs, current, prompt = nil)
+      pairs.unshift([prompt, '']) if prompt
+
       pairs.map { |label, value|
         tag(:option, label, :value => value, :selected => (current == value))
       }.join("\n")
