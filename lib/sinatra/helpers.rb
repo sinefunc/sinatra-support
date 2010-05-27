@@ -9,6 +9,8 @@ module Sinatra
     autoload :HamlErrorPresenter, "sinatra/helpers/haml_error_presenter"
     autoload :Country,            "sinatra/helpers/country"
     
+    # @private Sinatra extension writing style.
+    # @see http://www.sinatrarb.com/extensions.html#setting_options_and_other_extension_setup
     def self.registered(app)
       app.set :default_year_loffset, -60 
       app.set :default_year_uoffset, 0
