@@ -10,7 +10,11 @@ begin
     gem.email = "cyx.ucron@gmail.com"
     gem.homepage = "http://github.com/sinefunc/sinatra-helpers"
     gem.authors = ["Cyril David"]
+    gem.add_dependency "sinatra", ">= 1.0"
     gem.add_development_dependency "contest", ">= 0"
+    gem.add_development_dependency "mocha", ">= 0"
+    gem.add_development_dependency "rack-test", ">= 0"
+    gem.add_development_dependency "nokogiri", ">= 0"
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError

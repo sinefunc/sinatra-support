@@ -2,10 +2,11 @@
 
 module Sinatra
   module Helpers
-    class Country
-      LOOKUP = {
+    # A simple module containing all countries as of 2010.
+    module Country
+      @all = {
         :AF => "Afghanistan",
-        :AX => "Aland Islands",
+        :AX => "Åland Islands",
         :AL => "Albania",
         :DZ => "Algeria",
         :AS => "American Samoa",
@@ -30,22 +31,19 @@ module Sinatra
         :BJ => "Benin",
         :BM => "Bermuda",
         :BT => "Bhutan",
-        :BO => "Bolivia",
+        :BO => "Bolivia, Plurinational State of",
         :BA => "Bosnia and Herzegovina",
         :BW => "Botswana",
         :BV => "Bouvet Island",
         :BR => "Brazil",
-        :BQ => "British Antarctic Territory",
         :IO => "British Indian Ocean Territory",
-        :VG => "British Virgin Islands",
-        :BN => "Brunei",
+        :BN => "Brunei Darussalam",
         :BG => "Bulgaria",
         :BF => "Burkina Faso",
         :BI => "Burundi",
         :KH => "Cambodia",
         :CM => "Cameroon",
         :CA => "Canada",
-        :CT => "Canton and Enderbury Islands",
         :CV => "Cape Verde",
         :KY => "Cayman Islands",
         :CF => "Central African Republic",
@@ -53,13 +51,14 @@ module Sinatra
         :CL => "Chile",
         :CN => "China",
         :CX => "Christmas Island",
-        :CC => "Cocos Islands",
+        :CC => "Cocos (Keeling) Islands",
         :CO => "Colombia",
         :KM => "Comoros",
-        :CG => "Congo - Brazzaville",
-        :CD => "Congo - Kinshasa",
+        :CG => "Congo",
+        :CD => "Congo, the Democratic Republic of the",
         :CK => "Cook Islands",
         :CR => "Costa Rica",
+        :CI => "CÔte D'ivoire",
         :HR => "Croatia",
         :CU => "Cuba",
         :CY => "Cyprus",
@@ -68,9 +67,6 @@ module Sinatra
         :DJ => "Djibouti",
         :DM => "Dominica",
         :DO => "Dominican Republic",
-        :NQ => "Dronning Maud Land",
-        :DD => "East Germany",
-        :TL => "East Timor",
         :EC => "Ecuador",
         :EG => "Egypt",
         :SV => "El Salvador",
@@ -78,8 +74,7 @@ module Sinatra
         :ER => "Eritrea",
         :EE => "Estonia",
         :ET => "Ethiopia",
-        :QU => "European Union",
-        :FK => "Falkland Islands",
+        :FK => "Falkland Islands (Malvinas)",
         :FO => "Faroe Islands",
         :FJ => "Fiji",
         :FI => "Finland",
@@ -87,7 +82,6 @@ module Sinatra
         :GF => "French Guiana",
         :PF => "French Polynesia",
         :TF => "French Southern Territories",
-        :FQ => "French Southern and Antarctic Territories",
         :GA => "Gabon",
         :GM => "Gambia",
         :GE => "Georgia",
@@ -102,44 +96,45 @@ module Sinatra
         :GT => "Guatemala",
         :GG => "Guernsey",
         :GN => "Guinea",
-        :GW => "Guinea-Bissau",
+        :GW => "Guinea-bissau",
         :GY => "Guyana",
         :HT => "Haiti",
-        :HM => "Heard Island and McDonald Islands",
+        :HM => "Heard Island and Mcdonald Islands",
+        :VA => "Holy See (Vatican City State)",
         :HN => "Honduras",
         :HK => "Hong Kong",
         :HU => "Hungary",
         :IS => "Iceland",
         :IN => "India",
         :ID => "Indonesia",
-        :IR => "Iran",
+        :IR => "Iran, Islamic Republic of",
         :IQ => "Iraq",
         :IE => "Ireland",
         :IM => "Isle of Man",
         :IL => "Israel",
         :IT => "Italy",
-        :CI => "Ivory Coast",
         :JM => "Jamaica",
         :JP => "Japan",
         :JE => "Jersey",
-        :JT => "Johnston Island",
         :JO => "Jordan",
         :KZ => "Kazakhstan",
         :KE => "Kenya",
         :KI => "Kiribati",
+        :KP => "Korea, Democratic People's Republic of",
+        :KR => "Korea, Republic of",
         :KW => "Kuwait",
         :KG => "Kyrgyzstan",
-        :LA => "Laos",
+        :LA => "Lao People's Democratic Republic",
         :LV => "Latvia",
         :LB => "Lebanon",
         :LS => "Lesotho",
         :LR => "Liberia",
-        :LY => "Libya",
+        :LY => "Libyan Arab Jamahiriya",
         :LI => "Liechtenstein",
         :LT => "Lithuania",
         :LU => "Luxembourg",
-        :MO => "Macau",
-        :MK => "Macedonia",
+        :MO => "Macao",
+        :MK => "Macedonia, the Former Yugoslav Republic of",
         :MG => "Madagascar",
         :MW => "Malawi",
         :MY => "Malaysia",
@@ -151,11 +146,9 @@ module Sinatra
         :MR => "Mauritania",
         :MU => "Mauritius",
         :YT => "Mayotte",
-        :FX => "Metropolitan France",
         :MX => "Mexico",
-        :FM => "Micronesia",
-        :MI => "Midway Islands",
-        :MD => "Moldova",
+        :FM => "Micronesia, Federated States of",
+        :MD => "Moldova, Republic of",
         :MC => "Monaco",
         :MN => "Mongolia",
         :ME => "Montenegro",
@@ -168,7 +161,6 @@ module Sinatra
         :NP => "Nepal",
         :NL => "Netherlands",
         :AN => "Netherlands Antilles",
-        :NT => "Neutral Zone",
         :NC => "New Caledonia",
         :NZ => "New Zealand",
         :NI => "Nicaragua",
@@ -176,21 +168,15 @@ module Sinatra
         :NG => "Nigeria",
         :NU => "Niue",
         :NF => "Norfolk Island",
-        :KP => "North Korea",
-        :VD => "North Vietnam",
         :MP => "Northern Mariana Islands",
         :NO => "Norway",
         :OM => "Oman",
-        :QO => "Outlying Oceania",
-        :PC => "Pacific Islands Trust Territory",
         :PK => "Pakistan",
         :PW => "Palau",
-        :PS => "Palestinian Territory",
+        :PS => "Palestinian Territory, Occupied",
         :PA => "Panama",
-        :PZ => "Panama Canal Zone",
         :PG => "Papua New Guinea",
         :PY => "Paraguay",
-        :YD => "People's Democratic Republic of Yemen",
         :PE => "Peru",
         :PH => "Philippines",
         :PN => "Pitcairn",
@@ -198,12 +184,12 @@ module Sinatra
         :PT => "Portugal",
         :PR => "Puerto Rico",
         :QA => "Qatar",
-        :RE => "Reunion",
+        :RE => "RÉunion",
         :RO => "Romania",
-        :RU => "Russia",
+        :RU => "Russian Federation",
         :RW => "Rwanda",
-        :BL => "Saint Barthélemy",
-        :SH => "Saint Helena",
+        :BL => "Saint BarthÉlemy",
+        :SH => "Saint Helena, Ascension and Tristan Da Cunha",
         :KN => "Saint Kitts and Nevis",
         :LC => "Saint Lucia",
         :MF => "Saint Martin",
@@ -215,7 +201,6 @@ module Sinatra
         :SA => "Saudi Arabia",
         :SN => "Senegal",
         :RS => "Serbia",
-        :CS => "Serbia and Montenegro",
         :SC => "Seychelles",
         :SL => "Sierra Leone",
         :SG => "Singapore",
@@ -225,7 +210,6 @@ module Sinatra
         :SO => "Somalia",
         :ZA => "South Africa",
         :GS => "South Georgia and the South Sandwich Islands",
-        :KR => "South Korea",
         :ES => "Spain",
         :LK => "Sri Lanka",
         :SD => "Sudan",
@@ -234,11 +218,12 @@ module Sinatra
         :SZ => "Swaziland",
         :SE => "Sweden",
         :CH => "Switzerland",
-        :SY => "Syria",
-        :TW => "Taiwan",
+        :SY => "Syrian Arab Republic",
+        :TW => "Taiwan, Province of China",
         :TJ => "Tajikistan",
-        :TZ => "Tanzania",
+        :TZ => "Tanzania, United Republic of",
         :TH => "Thailand",
+        :TL => "Timor-leste",
         :TG => "Togo",
         :TK => "Tokelau",
         :TO => "Tonga",
@@ -248,23 +233,20 @@ module Sinatra
         :TM => "Turkmenistan",
         :TC => "Turks and Caicos Islands",
         :TV => "Tuvalu",
-        :PU => "U.S. Miscellaneous Pacific Islands",
-        :VI => "U.S. Virgin Islands",
         :UG => "Uganda",
         :UA => "Ukraine",
-        :SU => "Union of Soviet Socialist Republics",
         :AE => "United Arab Emirates",
         :GB => "United Kingdom",
         :US => "United States",
         :UM => "United States Minor Outlying Islands",
-        :ZZ => "Unknown or Invalid Region",
         :UY => "Uruguay",
         :UZ => "Uzbekistan",
         :VU => "Vanuatu",
-        :VA => "Vatican",
-        :VE => "Venezuela",
-        :VN => "Vietnam",
-        :WK => "Wake Island",
+        :VA => "Vatican City State",
+        :VE => "Venezuela, Bolivarian Republic of",
+        :VN => "Viet Nam",
+        :VG => "Virgin Islands, British",
+        :VI => "Virgin Islands, U.S.",
         :WF => "Wallis and Futuna",
         :EH => "Western Sahara",
         :YE => "Yemen",
@@ -272,18 +254,50 @@ module Sinatra
         :ZW => "Zimbabwe"
       }
       
-      def self.random_code
-        @to_a ||= LOOKUP.to_a
-        @to_a[rand(@to_a.size)].first
+      # @example
+      #   
+      #   p Country.to_select
+      #   [["Afghanistan", "AF"], ["Åland Islands", "AX"], ["Albania", "AL"], 
+      #   ["Algeria", "DZ"], ["American Samoa", "AS"], ... ["Zimbabwe", "ZW"]]
+      #
+      # @return [Array] a collection of pairs with the first element being 
+      #                 country name and the last element being the code.
+      #
+      # @see Sinatra::Helpers#country_choices
+      def to_select
+        all.map { |code, name| [name, code.to_s] }
+      end
+      
+      # Retrieves the country name given a country code.
+      # @example
+      #   
+      #   Sinatra::Helpers::Country["US"] == "United States"
+      #   # => true
+      #
+      #   Sinatra::Helpers::Country[:US] == "United States"
+      #   # => true
+      #
+      # @param [#to_sym] code The country code in 2 letter all caps format.
+      # @return [String] The corresponding country name given the code.
+      # @return [nil] nil if no matching country code.
+      def [](code)
+        all[code.to_sym]  if not code.to_s.empty?
+      end
+      
+      # For use with seeding dummy data.
+      # @return [Symbol] a randomized country code.
+      def random
+        all.keys.shuffle.first
+      end
+      
+      # Gives all countries in a Hash.
+      #
+      # @return [Hash] the code => name pairs of all countries.
+      def all
+        @all
       end
 
-      def self.to_select
-        LOOKUP.map { |code, name| [name, code] }
-      end
-
-      def self.[](code)
-        LOOKUP[code.to_sym]  if not code.to_s.empty?
-      end
+      module_function :all, :to_select, :[], :random
     end
   end
 end

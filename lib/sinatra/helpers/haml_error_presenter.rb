@@ -1,7 +1,6 @@
 module Sinatra
   module Helpers
-    # Taken from http://github.com/citrusbyte/reddit-clone
-    # Credit goes to citrusbyte.
+    # @see http://github.com/citrusbyte/reddit-clone
     class HamlErrorPresenter < Ohm::Validations::Presenter
       def on(error, message = (block_given? ? @context.capture_haml { yield } : raise(ArgumentError)))
         handle(error) do
