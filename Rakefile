@@ -15,6 +15,8 @@ begin
     gem.add_development_dependency "mocha", ">= 0"
     gem.add_development_dependency "rack-test", ">= 0"
     gem.add_development_dependency "nokogiri", ">= 0"
+    gem.add_development_dependency "ohm", ">= 0"
+    gem.add_development_dependency "haml", ">= 0"
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
