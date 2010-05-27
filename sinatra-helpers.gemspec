@@ -5,22 +5,22 @@
 
 Gem::Specification.new do |s|
   s.name = %q{sinatra-helpers}
-  s.version = "0.1.1"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Cyril David"]
-  s.date = %q{2010-05-06}
+  s.date = %q{2010-05-27}
   s.description = %q{Includes month_choices, year_choices, country_choices}
   s.email = %q{cyx.ucron@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE",
-     "README.rdoc"
+     "README.markdown"
   ]
   s.files = [
     ".document",
      ".gitignore",
      "LICENSE",
-     "README.rdoc",
+     "README.markdown",
      "Rakefile",
      "VERSION",
      "lib/sinatra/helpers.rb",
@@ -28,7 +28,9 @@ Gem::Specification.new do |s|
      "lib/sinatra/helpers/country.rb",
      "lib/sinatra/helpers/haml_error_presenter.rb",
      "sinatra-helpers.gemspec",
-     "test/helper.rb"
+     "test/helper.rb",
+     "test/test_country.rb",
+     "test/test_sinatra_helpers.rb"
   ]
   s.homepage = %q{http://github.com/sinefunc/sinatra-helpers}
   s.rdoc_options = ["--charset=UTF-8"]
@@ -36,7 +38,9 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.6}
   s.summary = %q{Some generic helpers for the view layer}
   s.test_files = [
-    "test/helper.rb"
+    "test/helper.rb",
+     "test/test_country.rb",
+     "test/test_sinatra_helpers.rb"
   ]
 
   if s.respond_to? :specification_version then
@@ -44,12 +48,30 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<sinatra>, [">= 1.0"])
       s.add_development_dependency(%q<contest>, [">= 0"])
+      s.add_development_dependency(%q<mocha>, [">= 0"])
+      s.add_development_dependency(%q<rack-test>, [">= 0"])
+      s.add_development_dependency(%q<nokogiri>, [">= 0"])
+      s.add_development_dependency(%q<ohm>, [">= 0"])
+      s.add_development_dependency(%q<haml>, [">= 0"])
     else
+      s.add_dependency(%q<sinatra>, [">= 1.0"])
       s.add_dependency(%q<contest>, [">= 0"])
+      s.add_dependency(%q<mocha>, [">= 0"])
+      s.add_dependency(%q<rack-test>, [">= 0"])
+      s.add_dependency(%q<nokogiri>, [">= 0"])
+      s.add_dependency(%q<ohm>, [">= 0"])
+      s.add_dependency(%q<haml>, [">= 0"])
     end
   else
+    s.add_dependency(%q<sinatra>, [">= 1.0"])
     s.add_dependency(%q<contest>, [">= 0"])
+    s.add_dependency(%q<mocha>, [">= 0"])
+    s.add_dependency(%q<rack-test>, [">= 0"])
+    s.add_dependency(%q<nokogiri>, [">= 0"])
+    s.add_dependency(%q<ohm>, [">= 0"])
+    s.add_dependency(%q<haml>, [">= 0"])
   end
 end
 
