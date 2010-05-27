@@ -4,6 +4,12 @@ class SintatraHelpersTest < Test::Unit::TestCase
   include Sinatra::Helpers
   
   attr :settings
+  
+  test "h" do
+    assert_equal "&lt;Foo&gt;", h("<Foo>")
+    assert_equal "&lt;Foo bar=&#39;baz&#39;&gt;", h("<Foo bar='baz'>")
+    assert_equal "&lt;Foo bar=&quot;baz&quot;&gt;", h("<Foo bar=\"baz\">")
+  end
 
   test "country_choices returns Country.to_select" do
     assert_equal Country.to_select, country_choices  

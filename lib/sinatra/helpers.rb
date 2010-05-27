@@ -4,6 +4,8 @@ require 'sinatra/helpers/compat-1.8.6'
 
 module Sinatra
   module Helpers
+    VERSION = "0.2.0"
+
     autoload :HamlErrorPresenter, "sinatra/helpers/haml_error_presenter"
     autoload :Country,            "sinatra/helpers/country"
     
@@ -16,7 +18,12 @@ module Sinatra
       app.set :default_currency_precision, 2
       app.set :default_currency_separator, ','
     end
-      
+  
+    # Returns an HTML sanitized string.
+    def h(str)
+      Rack::Utils.escape_html(str)
+    end
+
     # Returns an array of pairs i.e.
     #   
     # - ["Afghanistan", "AF"]
@@ -236,7 +243,7 @@ module Sinatra
         a
       }.join('')
 
-      %(<#{ tag }#{ tag_atts }>#{ content }</#{ tag }>)
+      %(<#{ tag }#{ tag_atts }>#{h content}</#{ tag }>)
     end
 
     def escape_attr(str)
