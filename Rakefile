@@ -4,11 +4,11 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "sinatra-helpers"
+    gem.name = "sinatra-support"
     gem.summary = %Q{Some generic helpers for the view layer}
     gem.description = %Q{Includes month_choices, year_choices, country_choices}
     gem.email = "cyx.ucron@gmail.com"
-    gem.homepage = "http://github.com/sinefunc/sinatra-helpers"
+    gem.homepage = "http://github.com/sinefunc/sinatra-support"
     gem.authors = ["Cyril David"]
     gem.add_dependency "sinatra", ">= 1.0"
     gem.add_development_dependency "contest", ">= 0"
@@ -52,7 +52,7 @@ Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "sinatra-helpers #{version}"
+  rdoc.title = "sinatra-support #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end

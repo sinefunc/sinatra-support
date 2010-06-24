@@ -9,7 +9,7 @@ require 'haml'
 
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
-require 'sinatra/helpers'
+require 'sinatra/support'
 
 class Test::Unit::TestCase
 end

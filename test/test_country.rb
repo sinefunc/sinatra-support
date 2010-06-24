@@ -1,7 +1,7 @@
 require "helper"
 
 class CountryTest < Test::Unit::TestCase
-  include Sinatra::Helpers
+  include Sinatra::Support
 
   test "241 countries" do
     assert_equal 246, Country.to_select.length  
