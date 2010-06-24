@@ -1,8 +1,8 @@
-Sinatra Helpers: a common collection of useful utilities
+Sinatra Support: a common collection of useful utilities
 --------------------------------------------------------
 
 Bare minimum, close to the metal helpers for your average sinatra application.
-Read the full documentation at [http://labs.sinefunc.com/sinatra-helpers/doc](http://labs.sinefunc.com/sinatra-helpers/doc).
+Read the full documentation at [http://labs.sinefunc.com/sinatra-support/doc](http://labs.sinefunc.com/sinatra-support/doc).
 
 Defines...
 ----------
