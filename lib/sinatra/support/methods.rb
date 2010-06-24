@@ -1,5 +1,15 @@
 module Sinatra
   module Support
+    # The actual module containing all of the helper methods.
+    # Internally after doing
+    #
+    #     register Sinatra::Support
+    #
+    # what happens is it automatically does the following:
+    #
+    #     helpers Sinatra::Support::Methods
+    #
+    # which in effect gives you access to all the methods here.
     module Methods
       # Returns an HTML sanitized string.
       def h(str)
@@ -129,8 +139,8 @@ module Sinatra
       #
       # @param [#errors] object An object responding to #errors. This validation
       #                  also checks for the presence of a #full_messages method
-      #                  in the errors object for compatibility with ActiveRecord
-      #                  style objects.
+      #                  in the errors object for compatibility with 
+      #                  ActiveRecord style objects.
       # @param [Hash] options a hash of HTML attributes to place on the
       #               containing div.
       # @option options [#to_s] :class (defaults to errors) The css class to put 

@@ -6,9 +6,9 @@ module Sinatra
   module Support
     VERSION = "0.2.0"
 
+    autoload :Methods,            "sinatra/support/methods"
     autoload :HamlErrorPresenter, "sinatra/support/haml_error_presenter"
     autoload :Country,            "sinatra/support/country"
-    autoload :Methods,            "sinatra/support/methods"
     
     # @private Sinatra extension writing style.
     # @see http://www.sinatrarb.com/extensions.html#setting_options_and_other_extension_setup
