@@ -88,8 +88,11 @@ module Sinatra
       #                 will end the year list at 2015 for example.
       # @return [Array] the array of year, year pairs.
       def year_choices(loffset = settings.default_year_loffset, uoffset = settings.default_year_uoffset)
-        years = ((Date.today.year + loffset)..(Date.today.year + uoffset)).to_a
-        years.zip(years)
+        start  = loffset + Date.today.year
+        finish = uoffset + Date.today.year
+        
+        enum   = start < finish ? start.upto(finish) : start.downto(finish)
+        enum.map { |e| [e, e] }
       end
     
       # Accepts a list of pairs and produces option tags.
@@ -230,7 +233,11 @@ module Sinatra
 
     protected
       def tag(tag, content, atts = {})
-        %(<#{ tag }#{ tag_attributes(atts) }>#{h content}</#{ tag }>)
+        if self_closing?(tag)
+          %(<#{ tag }#{ tag_attributes(atts) } />)
+        else
+          %(<#{ tag }#{ tag_attributes(atts) }>#{h content}</#{ tag }>)
+        end
       end
 
       def tag_attributes(atts = {})
@@ -242,6 +249,13 @@ module Sinatra
 
       def escape_attr(str)
         str.to_s.gsub("'", "&#39;").gsub('"', "&quot;")
+      end
+
+      def self_closing?(tag)
+        @self_closing ||= [:area, :base, :basefont, :br, :hr,
+                           :input, :img, :link, :meta]
+
+        @self_closing.include?(tag.to_sym)
       end
     end
   end

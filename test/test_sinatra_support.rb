@@ -95,6 +95,12 @@ class SintatraSupportTest < Test::Unit::TestCase
       assert_equal [2015, 2015], year_choices(0, 5).last
     end
 
+    test "allows to start with a higher lower upper offset" do
+      Date.expects(:today).at_least_once.returns(Date.new(2010, 5, 5))
+      assert_equal [2010, 2010], year_choices(0, -50).first
+      assert_equal [1960, 1960], year_choices(0, -50).last
+    end
+
     test "allows to customize via global settings" do
       settings.expects(:default_year_loffset).at_least_once.returns(0)
       settings.expects(:default_year_uoffset).at_least_once.returns(6)
