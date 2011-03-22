@@ -1,0 +1,80 @@
+= Sinatra Support
+
+==== A collection of useful utilities.
+
+== Helpers
+
+[{Sinatra::CountryHelpers}]   Country dropdowns and stuff.
+[{Sinatra::HtmlHelpers}]      Provides many common HTML helpers.
+[{Sinatra::OhmErrorHelpers}]  Allows you to present errors nicely
+                              in HAML templates.
+
+== Plugins
+
+[{Sinatra::Numeric}]          Helpers for showing percentages and currencies.
+[{Sinatra::DateForms}]        Provides dropdowns for year/month/date.
+
+== How to use
+
+Require the Sinatra support gem. For those using Bundler, that is:
+
+  # Gemfile
+  gem "sinatra_support", require: "sinatra/support"
+
+Or otherwise:
+
+  require 'sinatra/support'
+
+In your Sinatra application, use +register+ or +helpers+ to add
+in plugins as you need them.
+
+  class Main < Sinatra::Base
+    register Sinatra::Date
+    helpers  Sinatra::HtmlHelpers
+    helpers  Sinatra::CountryHelpers
+  end
+
+== Common examples
+
+==== Provided by {Sinatra::HtmlHelpers}:
+
+  <%= h "<Bar>" %>
+  
+==== Provided by {Sinatra::CountryHelpers}:
+
+  <select name="country">
+    <%= country_choices %>
+  </select>
+
+==== Provided by {Sinatra::DateForms}:
+
+  <select name="birthday[month]">
+    <%= month_choices %>
+  </select>
+  
+  <select name="birthday[day]">
+    <%= day_choices %>
+  </select>
+
+  <select name="birthday[year]">
+    <%= year_choices %>
+  </select>
+  
+==== Provided by {Sinatra::HtmlHelpers}:
+
+  <select name="categories">
+    <%= select_options [['First', 1], ['Second', 2]] %>
+  </select>
+  
+==== Provided by {Sinatra::Numeric}:
+
+  <%= currency(100) %>
+  <!-- $100 -->
+
+  <%= percentage(100) %>
+  <!-- 100.00% -->
+
+== Copyright
+
+Copyright (c) 2010 Cyril David, Rico Sta. Cruz and Sinefunc, Inc.
+See LICENSE for details.

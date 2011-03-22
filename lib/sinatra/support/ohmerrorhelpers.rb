@@ -1,7 +1,17 @@
 # Ohm error helpers.
 #
+#   # Only for those who use Ohm and HAML.
+#   require 'ohm'
+#   require 'haml'
+#
+#   require 'sinatra/support/ohmerrorhelpers'
+#
+#   class Main < Sinatra::Base
+#     helpers Sinatra::OhmErrorHelpers
+#   end
+#
 # == Common usage
-#   
+# 
 #   - errors_on @user do |e|
 #     - e.on [:email, :not_present], "We need your email address."
 #     - e.on [:password, :not_present], "You must specify a password."
@@ -14,18 +24,6 @@
 #       <li>You must specify a password.</li>
 #     </ul>
 #   </div>
-#
-# == Usage
-#
-#   # Only for those who use Ohm and HAML.
-#   require 'ohm'
-#   require 'haml'
-#
-#   require 'sinatra/support/ohmerrorhelpers'
-#
-#   class Main < Sinatra::Base
-#     helpers Sinatra::OhmErrorHelpers
-#   end
 #
 module Sinatra::OhmErrorHelpers
   # Presents errors on your form. Takes the explicit approach and assumes

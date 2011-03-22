@@ -1,14 +1,6 @@
 require File.expand_path('../country', __FILE__)
-require File.expand_path('../htmlhelpers', __FILE__)
 
 # Country helpers.
-#
-# == Common usage
-#
-#   <!-- A dropdown box of countries. -->
-#   <%= select_options country_choices %>
-#
-# == Usage
 #
 #   require 'sinatra/support/countryhelpers'
 #   require 'sinatra/support/htmlhelpers'
@@ -17,6 +9,17 @@ require File.expand_path('../htmlhelpers', __FILE__)
 #     helpers Sinatra::HtmlHelpers
 #     helpers Sinatra::CountryHelpers
 #   end
+#
+# == Helpers
+#
+# Provides the following helpers:
+#
+# === {#country_choices country_choices} - Country choices for select_options.
+#
+#   <!-- A dropdown box of countries. -->
+#   <select name="country">
+#     <%= select_options country_choices %>
+#   </select>
 #
 module Sinatra::CountryHelpers
   def country_choices

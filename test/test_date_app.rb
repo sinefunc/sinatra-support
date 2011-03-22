@@ -1,11 +1,11 @@
 require File.expand_path('../helper', __FILE__)
 
 class DateAppTest < Test::Unit::TestCase
-  include Sinatra::Date::Helpers
+  include Sinatra::DateForms::Helpers
   include Rack::Test::Methods
 
   class App < Sinatra::Base
-    register Sinatra::Date
+    register Sinatra::DateForms
     get('/years') { year_choices.to_s }
     get('/months') { month_choices.to_s }
   end

@@ -1,6 +1,4 @@
-# Numeric.
-#
-# == Usage
+# Provides numeric helpers.
 #
 #   require 'sinatra/support/numeric'
 #
@@ -8,11 +6,29 @@
 #     register Sinatra::Numeric
 #   end
 #
+# == Helpers
+#
+# This plugin provides the following helpers:
+#
+# === {Helpers#currency currency} - Formats a string as a currency.
+#
+#   <%= currency(100) %>
+#   <!-- $100 -->
+#
+# == {Helpers#percentage percentage} - Formats a number as a percentage.
+#
+#   <%= percentage(100) %>
+#   <!-- 100.00% -->
+#
 # == Settings
 #
-#   set :default_currency_unit, '$'
-#   set :default_currency_precision, 2
-#   set :default_currency_separator, ','
+# You may change the settings like so:
+#
+#   Main.configure do |m|
+#     m.set :default_currency_unit, '$'
+#     m.set :default_currency_precision, 2
+#     m.set :default_currency_separator, ','
+#   end
 #
 module Sinatra::Numeric
   def self.registered(app)

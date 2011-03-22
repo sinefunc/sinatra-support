@@ -1,6 +1,4 @@
-# Useful helpers.
-#
-# == Usage
+# Useful HTML helpers.
 #
 #   require 'sinatra/support/htmlhelpers'
 #
@@ -8,12 +6,14 @@
 #     helpers Sinatra::HtmlHelpers
 #   end
 #
-# == Common usage
+# == Helpers
 #
-#   <!-- #h: Escapes an HTML. -->
+# This provides the following helpers:
+#
+# === {#h h} - Escapes HTML output
 #   <a href="<%= h url %>">
 #
-#   <!-- #tag: builds an HTML tag. -->
+# === {#tag tag} - Builds HTML tags
 #   tag :a                     #=> "<a>"
 #   tag :strong, "Yes"         #=> "<strong>Yes</strong>"
 #   tag :a, "OK", href: "#"    #=> "<a href='#'>OK</a>"
