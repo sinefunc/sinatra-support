@@ -1,7 +1,13 @@
-require "helper"
+require File.expand_path('../helper', __FILE__)
 
 class CountryTest < Test::Unit::TestCase
-  include Sinatra::Support
+  include Sinatra::CountryHelpers
+
+  Country = Sinatra::Country
+
+  test "country_choices returns Country.to_select" do
+    assert_equal Country.to_select, country_choices  
+  end
 
   test "241 countries" do
     assert_equal 246, Country.to_select.length  
