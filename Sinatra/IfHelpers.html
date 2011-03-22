@@ -92,8 +92,8 @@ These are helpers you can use in HAML files.
 </pre>
 <h3><span class='object_link'><a href="#hide_if-instance_method" title="Sinatra::IfHelpers#hide_if (method)">hide_if</a></span> - Adds <tt>style=display:none</tt>.</h3>
 <pre class="code">
-  <span class='comment'>#comments{hide_if(post.comments.empty?)}
-</span></pre>
+  %div#comments{hide_if(post.comments.empty?)}
+</pre>
 <h3><span class='object_link'><a href="#show_if-instance_method" title="Sinatra::IfHelpers#show_if (method)">show_if</a></span> - Inverse of <tt>hide_if</tt>.</h3>
 <h3><span class='object_link'><a href="#selected_if-instance_method" title="Sinatra::IfHelpers#selected_if (method)">selected_if</a></span> - Adds <tt>selected=1</tt>.</h3>
 <h3><span class='object_link'><a href="#disabled_if-instance_method" title="Sinatra::IfHelpers#disabled_if (method)">disabled_if</a></span> - Adds <tt>disabled=1</tt>.</h3>
@@ -472,7 +472,7 @@ These are helpers you can use in HAML files.
 </div>
     
     <div id="footer">
-  Generated on Wed Mar 23 02:51:39 2011 by 
+  Generated on Wed Mar 23 02:59:33 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.6.4 (ruby-1.9.2).
 </div>
