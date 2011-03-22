@@ -1,7 +1,7 @@
 require File.expand_path('../helper', __FILE__)
 
 class DateTest < Test::Unit::TestCase
-  include Sinatra::Date::Helpers
+  include Sinatra::DateForms::Helpers
 
   test "day_choices returns 1 to 31" do
     assert_equal 31, day_choices.size
