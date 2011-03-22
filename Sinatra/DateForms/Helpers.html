@@ -1,0 +1,499 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Content-Type" content="text/html; charset=utf-8" />
+<title>Module: Sinatra::DateForms::Helpers</title>
+<link rel="stylesheet" href="../../css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="../../css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '../..';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../_index.html">Index (H)</a> &raquo; 
+    <span class='title'><span class='object_link'><a href="../../Sinatra.html" title="Sinatra (module)">Sinatra</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../DateForms.html" title="Sinatra::DateForms (module)">DateForms</a></span></span>
+     &raquo; 
+    <span class="title">Helpers</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Class List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
+
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Module: Sinatra::DateForms::Helpers
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/sinatra/support/dateforms.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#day_choices-instance_method" title="#day_choices (instance method)">- (Array) <strong>day_choices</strong>(max = 31) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Returns an array of date pairs.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#month_choices-instance_method" title="#month_choices (instance method)">- (Array) <strong>month_choices</strong>(month_names = settings.default_month_names) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Returns an array of pairs.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#year_choices-instance_method" title="#year_choices (instance method)">- (Array) <strong>year_choices</strong>(loffset = settings.default_year_loffset, uoffset = settings.default_year_uoffset) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Returns an array of pairs.
+</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="day_choices-instance_method">
+  
+    - (<tt>Array</tt>) <strong>day_choices</strong>(max = 31) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Returns an array of date pairs. Best used with
+<span class='object_link'><a href="../HtmlHelpers.html#select_options-instance_method" title="Sinatra::HtmlHelpers#select_options (method)">HtmlHelpers#select_options</a></span>.
+</p>
+<p>
+An example output looks like:
+</p>
+<pre class="code">
+  * [1, 1]
+  * [2, 2]
+  * ...
+  * [31, 31]</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'><p>
+This is perfect for @select_options@.
+</p>
+</div></h4>
+      <pre class="example code">
+&lt;select name=&quot;date&quot;&gt;
+  &lt;%= select_options day_choices %&gt;</pre>
+    
+  </div>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+the array of day, day pairs.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+79
+80
+81
+82</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/dateforms.rb', line 79</span>
+
+<span class='kw'>def</span> <span class='id day_choices'>day_choices</span><span class='lparen'>(</span><span class='id max'>max</span><span class='op'>=</span><span class='int'>31</span><span class='rparen'>)</span>
+  <span class='id days'>days</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='int'>1</span><span class='op'>..</span><span class='id max'>max</span><span class='rparen'>)</span><span class='period'>.</span><span class='id to_a'>to_a</span>
+  <span class='id days'>days</span><span class='period'>.</span><span class='id zip'>zip</span><span class='lparen'>(</span><span class='id days'>days</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="month_choices-instance_method">
+  
+    - (<tt>Array</tt>) <strong>month_choices</strong>(month_names = settings.default_month_names) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Returns an array of pairs.
+</p>
+<p>
+You may pass in @Date::ABBR_MONTHNAMES@ if you want the shortened month 
+names.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'><p>
+output
+</p>
+</div></h4>
+      <pre class="example code">
+- ['January', 1]
+- ['February', 2]
+- ...
+- ['December', 12]</pre>
+    
+  </div>
+<h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+        <span class='name'>month_names</span>
+      
+      
+        <em class="default">(defaults to: <tt>settings.default_month_names</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>
+(defaults to Date::MONTHNAMES) an array with the first element being nil,
+element 1 being January, etc.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+the array of month name, month pairs.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+99
+100
+101
+102
+103</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/dateforms.rb', line 99</span>
+
+<span class='kw'>def</span> <span class='id month_choices'>month_choices</span><span class='lparen'>(</span><span class='id month_names'>month_names</span> <span class='op'>=</span> <span class='id settings'>settings</span><span class='period'>.</span><span class='id default_month_names'>default_month_names</span><span class='rparen'>)</span>
+  <span class='id month_names'>month_names</span><span class='period'>.</span><span class='id map'>map</span><span class='period'>.</span>
+    <span class='id with_index'>with_index</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id month'>month</span><span class='comma'>,</span> <span class='id idx'>idx</span><span class='op'>|</span> <span class='lbracket'>[</span><span class='id month'>month</span><span class='comma'>,</span> <span class='id idx'>idx</span><span class='rbracket'>]</span> <span class='rbrace'>}</span><span class='period'>.</span>
+    <span class='id tap'>tap</span>        <span class='lbrace'>{</span> <span class='op'>|</span><span class='id arr'>arr</span><span class='op'>|</span> <span class='id arr'>arr</span><span class='period'>.</span><span class='id shift'>shift</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="year_choices-instance_method">
+  
+    - (<tt>Array</tt>) <strong>year_choices</strong>(loffset = settings.default_year_loffset, uoffset = settings.default_year_uoffset) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Returns an array of pairs.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'><p>
+Output
+</p>
+</div></h4>
+      <pre class="example code">
+- [2005, 2005]
+- [2006, 2006]
+- ...
+- [2010, 2010]</pre>
+    
+      <h4><div class='inline'></div></h4>
+      <pre class="example code">
+<span class='id year_choices'>year_choices</span> <span class='comment'># assuming it's now 2010
+</span><span class='comment'># =&gt; [[1950, 1950], ..., [2010, 2010]]
+</span>
+<span class='comment'># we can pass in options
+</span><span class='id year_choices'>year_choices</span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>6</span><span class='rparen'>)</span> <span class='comment'># like for credit card options
+</span><span class='comment'># =&gt; [[2010, 2010], ..., [2016, 2016]]
+</span>
+<span class='comment'># also we can override settings at the app level
+</span><span class='id set'>set</span> <span class='symbol'>:default_year_loffset</span><span class='comma'>,</span> <span class='int'>0</span>
+<span class='id set'>set</span> <span class='symbol'>:default_year_uoffset</span><span class='comma'>,</span> <span class='int'>6</span>
+<span class='id year_choices'>year_choices</span>
+<span class='comment'># =&gt; [[2010, 2010], ..., [2016, 2016]]</span></pre>
+    
+  </div>
+<h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='type'>(<tt>Fixnum</tt>)</span>
+      
+      
+        <span class='name'>loffset</span>
+      
+      
+        <em class="default">(defaults to: <tt>settings.default_year_loffset</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>
+(defaults to -60) The lower offset relative to the current year. If
+it&#8217;s 2010 now, passing in -5 here will start the year list at 2005
+for example.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'>(<tt>Fixnum</tt>)</span>
+      
+      
+        <span class='name'>uoffset</span>
+      
+      
+        <em class="default">(defaults to: <tt>settings.default_year_uoffset</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>
+(defaults to 0) The upper offset relative to the  current year. If
+it&#8217;s 2010 now, passing in 5 or +5 here  will end the year list at
+2015 for example.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+the array of year, year pairs.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+137
+138
+139
+140
+141
+142
+143</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/dateforms.rb', line 137</span>
+
+<span class='kw'>def</span> <span class='id year_choices'>year_choices</span><span class='lparen'>(</span><span class='id loffset'>loffset</span> <span class='op'>=</span> <span class='id settings'>settings</span><span class='period'>.</span><span class='id default_year_loffset'>default_year_loffset</span><span class='comma'>,</span> <span class='id uoffset'>uoffset</span> <span class='op'>=</span> <span class='id settings'>settings</span><span class='period'>.</span><span class='id default_year_uoffset'>default_year_uoffset</span><span class='rparen'>)</span>
+  <span class='id start'>start</span>  <span class='op'>=</span> <span class='id loffset'>loffset</span> <span class='op'>+</span> <span class='const'>Date</span><span class='period'>.</span><span class='id today'>today</span><span class='period'>.</span><span class='id year'>year</span>
+  <span class='id finish'>finish</span> <span class='op'>=</span> <span class='id uoffset'>uoffset</span> <span class='op'>+</span> <span class='const'>Date</span><span class='period'>.</span><span class='id today'>today</span><span class='period'>.</span><span class='id year'>year</span>
+  
+  <span class='id enum'>enum</span>   <span class='op'>=</span> <span class='id start'>start</span> <span class='op'>&lt;</span> <span class='id finish'>finish</span> <span class='op'>?</span> <span class='id start'>start</span><span class='period'>.</span><span class='id upto'>upto</span><span class='lparen'>(</span><span class='id finish'>finish</span><span class='rparen'>)</span> <span class='op'>:</span> <span class='id start'>start</span><span class='period'>.</span><span class='id downto'>downto</span><span class='lparen'>(</span><span class='id finish'>finish</span><span class='rparen'>)</span>
+  <span class='id enum'>enum</span><span class='period'>.</span><span class='id map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id e'>e</span><span class='op'>|</span> <span class='lbracket'>[</span><span class='id e'>e</span><span class='comma'>,</span> <span class='id e'>e</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Wed Mar 23 02:33:58 2011 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.6.4 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>

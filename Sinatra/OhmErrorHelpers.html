@@ -1,0 +1,328 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Content-Type" content="text/html; charset=utf-8" />
+<title>Module: Sinatra::OhmErrorHelpers</title>
+<link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="../css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '..';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (O)</a> &raquo; 
+    <span class='title'><span class='object_link'><a href="../Sinatra.html" title="Sinatra (module)">Sinatra</a></span></span>
+     &raquo; 
+    <span class="title">OhmErrorHelpers</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Class List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
+
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Module: Sinatra::OhmErrorHelpers
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/sinatra/support/errorhelpers.rb<span class="defines">,<br />
+  lib/sinatra/support/ohmerrorhelpers.rb</span>
+</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>
+Ohm error helpers.
+</p>
+<pre class="code">
+  <span class='comment'># Only for those who use Ohm and HAML.
+</span>  <span class='id require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>ohm</span><span class='tstring_end'>'</span></span>
+  <span class='id require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>haml</span><span class='tstring_end'>'</span></span>
+
+  <span class='id require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>sinatra/support/ohmerrorhelpers</span><span class='tstring_end'>'</span></span>
+
+  <span class='kw'>class</span> <span class='const'>Main</span> <span class='op'>&lt;</span> <span class='const'>Sinatra</span><span class='op'>::</span><span class='const'>Base</span>
+    <span class='id helpers'>helpers</span> <span class='const'>Sinatra</span><span class='op'>::</span><span class='const'>OhmErrorHelpers</span>
+  <span class='kw'>end</span>
+</pre>
+<h2>Common usage</h2>
+<pre class="code">
+  * errors_on @user do |e|
+    * e.on [:email, :not_present], &quot;We need your email address.&quot;
+    * e.on [:password, :not_present], &quot;You must specify a password.&quot;
+</pre>
+<p>
+This produces the following:
+</p>
+<pre class="code">
+  &lt;div class=&quot;errors&quot;&gt;
+    &lt;ul&gt;
+      &lt;li&gt;We need your email address&lt;/li&gt;
+      &lt;li&gt;You must specify a password.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><h2>Defined Under Namespace</h2>
+<p class="children">
+   
+    
+   
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="OhmErrorHelpers/HamlErrorPresenter.html" title="Sinatra::OhmErrorHelpers::HamlErrorPresenter (class)">HamlErrorPresenter</a></span>
+    
+  
+</p>
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#errors_on-instance_method" title="#errors_on (instance method)">- (Object) <strong>errors_on</strong>(object, options = { :class =&gt; 'errors' }) {|Sinatra::Support::HamlErrorPresenter| ... }</a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Presents errors on your form.
+</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="errors_on-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>errors_on</strong>(object, options = { :class =&gt; 'errors' }) {|Sinatra::Support::HamlErrorPresenter| ... }
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Presents errors on your form. Takes the explicit approach and assumes that
+for every form you have, the copy for the errors are important, instead of
+producing canned responses.
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='type'>(<tt>#errors</tt>)</span>
+      
+      
+        <span class='name'>object</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+An object responding to #errors. This validation also checks for the
+presence of a #full_messages method in the errors object for compatibility
+with  ActiveRecord style objects.
+</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <span class='name'>options</span>
+      
+      
+        <em class="default">(defaults to: <tt>{ :class =&gt; 'errors' }</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>
+a hash of HTML attributes to place on the containing div.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    
+    
+    <h3>Options Hash (<tt>options</tt>):</h3>
+    <ul class="option">
+      
+        <li>
+          <span class="type">(<tt>#to_s</tt>)</span>
+          <span class="name">:class</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>defaults to errors</tt>
+            
+          </span>
+          &mdash; <div class='inline'><p>
+The css class to put  in the div.
+</p>
+</div>
+        </tr>
+      
+    </ul>
+  
+<h3>Yields:</h3>
+<ul class="yield">
+  
+    <li>
+      
+        <span class='type'>(<tt>Sinatra::Support::HamlErrorPresenter</tt>)</span>
+      
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>
+an object responding to #on.
+</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/errorhelpers.rb', line 45</span>
+
+<span class='kw'>def</span> <span class='id errors_on'>errors_on</span><span class='lparen'>(</span><span class='id object'>object</span><span class='comma'>,</span> <span class='id options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='symbol'>:class</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>errors</span><span class='tstring_end'>'</span></span> <span class='rbrace'>}</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id block'>block</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='kw'>if</span> <span class='id object'>object</span><span class='period'>.</span><span class='id errors'>errors</span><span class='period'>.</span><span class='id empty?'>empty?</span>
+
+  <span class='id lines'>lines</span> <span class='op'>=</span> <span class='kw'>if</span> <span class='id object'>object</span><span class='period'>.</span><span class='id errors'>errors</span><span class='period'>.</span><span class='id respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='symbol'>:full_messages</span><span class='rparen'>)</span>
+    <span class='id object'>object</span><span class='period'>.</span><span class='id errors'>errors</span><span class='period'>.</span><span class='id full_messages'>full_messages</span>
+  <span class='kw'>else</span>
+    <span class='const'>HamlErrorPresenter</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='id object'>object</span><span class='period'>.</span><span class='id errors'>errors</span><span class='rparen'>)</span><span class='period'>.</span><span class='id present'>present</span><span class='lparen'>(</span><span class='kw'>self</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id block'>block</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='id haml_tag'>haml_tag</span><span class='lparen'>(</span><span class='symbol'>:div</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span> <span class='kw'>do</span>
+    <span class='id haml_tag'>haml_tag</span><span class='lparen'>(</span><span class='symbol'>:ul</span><span class='rparen'>)</span> <span class='kw'>do</span>
+      <span class='id lines'>lines</span><span class='period'>.</span><span class='id each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id error'>error</span><span class='op'>|</span>
+        <span class='id haml_tag'>haml_tag</span><span class='lparen'>(</span><span class='symbol'>:li</span><span class='comma'>,</span> <span class='id error'>error</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Wed Mar 23 02:33:59 2011 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.6.4 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>

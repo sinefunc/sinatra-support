@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta name="Content-Type" content="text/html; charset=utf-8" />
+<title>Module: Sinatra::CssSupport</title>
+<link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="../css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '..';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (C)</a> &raquo; 
+    <span class='title'><span class='object_link'><a href="../Sinatra.html" title="Sinatra (module)">Sinatra</a></span></span>
+     &raquo; 
+    <span class="title">CssSupport</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Class List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
+
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Module: Sinatra::CssSupport
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/sinatra/support/csssupport.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>
+Support for Sass/SCSS/Less.
+</p>
+<h2>Usage</h2>
+<pre class="code">
+  <span class='id require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>sinatra/support/csssupport</span><span class='tstring_end'>'</span></span>
+</pre>
+<p>
+Use <span class='object_link'><a href="#serve_css-instance_method" title="Sinatra::CssSupport#serve_css (method)">#serve_css</a></span> in the Sinatra DSL to serve up files.
+</p>
+<pre class="code">
+  <span class='id register'>register</span> <span class='const'>Sinatra</span><span class='op'>::</span><span class='const'>CssSupport</span>
+  <span class='id serve_css'>serve_css</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/styles</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='label'>from:</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>./app/css</span><span class='tstring_end'>'</span></span>
+</pre>
+<p>
+Assuming you have a <tt>app/css/print.scss</tt> file, you will then be able
+to access it from the given URL prefix.
+</p>
+<pre class="code">
+  $ curl &quot;http://localhost:4567/styles/print.css&quot;
+</pre>
+<p>
+This plugin supports Sass, Less and SCSS and guesses by the file name.
+</p>
+<h2>Caveats</h2>
+<p>
+Note that you will need to set your Sass/SCSS <tt>load_path</tt> settings.
+</p>
+<pre class="code">
+  <span class='const'>Main</span><span class='period'>.</span><span class='id configure'>configure</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id m'>m</span><span class='op'>|</span>
+    <span class='id m'>m</span><span class='period'>.</span><span class='id set'>set</span> <span class='symbol'>:scss</span><span class='comma'>,</span> <span class='lbrace'>{</span>
+      <span class='symbol'>:load_paths</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>app/css</span><span class='tstring_end'>'</span></span> <span class='rbracket'>]</span>
+    <span class='rbrace'>}</span>
+    <span class='id m'>m</span><span class='period'>.</span><span class='id set'>set</span> <span class='symbol'>:scss</span><span class='comma'>,</span> <span class='kw'>self</span><span class='period'>.</span><span class='id scss'>scss</span><span class='period'>.</span><span class='id merge'>merge</span><span class='lparen'>(</span><span class='symbol'>:style</span> <span class='op'>=&gt;</span> <span class='symbol'>:compressed</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id m'>m</span><span class='period'>.</span><span class='id production?'>production?</span>
+  <span class='kw'>end</span></pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div>
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#registered-class_method" title="registered (class method)">+ (Object) <strong>registered</strong>(app) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#serve_css-instance_method" title="#serve_css (instance method)">- (Object) <strong>serve_css</strong>(url_prefix, options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="registered-class_method">
+  
+    + (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>registered</strong>(app) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+32
+33
+34</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/csssupport.rb', line 32</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id registered'>registered</span><span class='lparen'>(</span><span class='id app'>app</span><span class='rparen'>)</span>
+  <span class='id app'>app</span><span class='period'>.</span><span class='id set'>set</span> <span class='symbol'>:css_max_age</span><span class='comma'>,</span> <span class='int'>86400</span><span class='op'>*</span><span class='int'>30</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="serve_css-instance_method">
+  
+    - (<tt><span class='object_link'><a href="../Object.html" title="Object (class)">Object</a></span></tt>) <strong>serve_css</strong>(url_prefix, options = {}) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/csssupport.rb', line 36</span>
+
+<span class='kw'>def</span> <span class='id serve_css'>serve_css</span><span class='lparen'>(</span><span class='id url_prefix'>url_prefix</span><span class='comma'>,</span> <span class='id options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id path'>path</span>   <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id join'>join</span><span class='lparen'>(</span><span class='id url_prefix'>url_prefix</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>*.css</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id prefix'>prefix</span> <span class='op'>=</span> <span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:from</span><span class='rbracket'>]</span>
+
+  <span class='id get'>get</span> <span class='id path'>path</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id name'>name</span><span class='op'>|</span>
+    <span class='id fname'>fname</span> <span class='op'>=</span> <span class='const'>Dir</span><span class='lbracket'>[</span><span class='const'>File</span><span class='period'>.</span><span class='id join'>join</span><span class='lparen'>(</span><span class='id prefix'>prefix</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id name'>name</span><span class='rbrace'>}</span><span class='tstring_content'>.{css,scss,less}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id first'>first</span>  <span class='kw'>or</span> <span class='id pass'>pass</span>
+
+    <span class='id content_type'>content_type</span> <span class='symbol'>:css</span><span class='comma'>,</span> <span class='symbol'>:charset</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>utf-8</span><span class='tstring_end'>'</span></span>
+    <span class='id last_modified'>last_modified</span> <span class='const'>File</span><span class='period'>.</span><span class='id mtime'>mtime</span><span class='lparen'>(</span><span class='id fname'>fname</span><span class='rparen'>)</span>
+    <span class='id cache_control'>cache_control</span> <span class='symbol'>:public</span><span class='comma'>,</span> <span class='symbol'>:must_revalidate</span><span class='comma'>,</span> <span class='symbol'>:max_age</span> <span class='op'>=&gt;</span> <span class='id settings'>settings</span><span class='period'>.</span><span class='id js_max_age'>js_max_age</span>
+
+    <span class='kw'>if</span> <span class='id fname'>fname</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\.scss$</span><span class='regexp_end'>/</span></span>
+      <span class='id scss'>scss</span> <span class='const'>File</span><span class='period'>.</span><span class='id read'>read</span><span class='lparen'>(</span><span class='id fname'>fname</span><span class='rparen'>)</span>
+    <span class='kw'>elsif</span> <span class='id fname'>fname</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\.scss$</span><span class='regexp_end'>/</span></span>
+      <span class='id sass'>sass</span> <span class='const'>File</span><span class='period'>.</span><span class='id read'>read</span><span class='lparen'>(</span><span class='id fname'>fname</span><span class='rparen'>)</span>
+    <span class='kw'>elsif</span> <span class='id fname'>fname</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\.less$</span><span class='regexp_end'>/</span></span>
+      <span class='id less'>less</span> <span class='const'>File</span><span class='period'>.</span><span class='id read'>read</span><span class='lparen'>(</span><span class='id fname'>fname</span><span class='rparen'>)</span>
+    <span class='kw'>else</span>
+      <span class='id send_file'>send_file</span> <span class='id fname'>fname</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Wed Mar 23 02:33:58 2011 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.6.4 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>
