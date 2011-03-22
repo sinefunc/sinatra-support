@@ -10,7 +10,7 @@
 #
 # These are helpers you can use in HAML files.
 #
-# === {#active_if active_if} - Adds +class='active'+ if a condition passes.
+# === {#active_if active_if} - Adds +class=active+ if a condition passes.
 #
 #   - @users.each do |user|
 #     %li{active_if(user == current_user)}
@@ -20,9 +20,9 @@
 #
 #   %input{checked_if(page.available?), type: 'checkbox'}
 #
-# === {#hide_if hide_if} - Adds +style='display:none'+.
+# === {#hide_if hide_if} - Adds +style=display:none+.
 #
-#   #comments{hide_if(post.comments.empty?)}
+#   %div#comments{hide_if(post.comments.empty?)}
 #
 # === {#show_if show_if} - Inverse of +hide_if+.
 #
