@@ -82,5 +82,5 @@ Conditional helpers for HAML (+checked_if+, +hide_if+, etc):
   
 == Copyright
 
-Copyright (c) 2010 Cyril David, Rico Sta. Cruz and Sinefunc, Inc.
+Copyright (c) 2009-2011 Cyril David, Rico Sta. Cruz and Sinefunc, Inc.
 See LICENSE for details.
