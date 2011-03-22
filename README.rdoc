@@ -32,51 +32,54 @@ In your Sinatra application, use +register+ or +helpers+ to add
 in plugins as you need them.
 
   class Main < Sinatra::Base
-    register Sinatra::Date
+    register Sinatra::DateForms
     helpers  Sinatra::HtmlHelpers
     helpers  Sinatra::CountryHelpers
   end
 
 == Common examples
 
+==== Provided by {Sinatra::CssSupport}:
+
+Serve up dynamic stylesheets (Sass/Less) with ease. Dynamic JavaScript files
+(CoffeeScript) are also available via {Sinatra::JsSupport}.
+
+  register Sinatra::CssSupport
+  serve_css '/css', from: './app/css'
+
+  # curl "http://localhost:4567/css/print.css"   # reads app/css/print.sass 
+                                                 # (or .less, .scss, .css)
+
+==== Provided by {Sinatra::IfHelpers}:
+
+Conditional helpers for HAML (+checked_if+, +hide_if+, etc):
+
+   %input{checked_if(page.available?), type: 'checkbox'}
+   %div#comments{hide_if(post.comments.empty?)}
+
+==== Provided by {Sinatra::CountryHelpers}:
+
+  <select name="country"><%= country_choices %></select>
+
+==== Provided by {Sinatra::DateForms}:
+
+  <select name="birthday[month]"><%= month_choices %></select>
+  <select name="birthday[day]"><%= day_choices %></select>
+  <select name="birthday[year]"><%= year_choices %></select>
+  
+==== Provided by {Sinatra::Numeric}:
+
+  <%= currency(100) %><!-- $100 -->
+  <%= percentage(100) %><!-- 100.00% -->
+
 ==== Provided by {Sinatra::HtmlHelpers}:
 
   <%= h "<Bar>" %>
   
-==== Provided by {Sinatra::CountryHelpers}:
-
-  <select name="country">
-    <%= country_choices %>
-  </select>
-
-==== Provided by {Sinatra::DateForms}:
-
-  <select name="birthday[month]">
-    <%= month_choices %>
-  </select>
-  
-  <select name="birthday[day]">
-    <%= day_choices %>
-  </select>
-
-  <select name="birthday[year]">
-    <%= year_choices %>
-  </select>
-  
-==== Provided by {Sinatra::HtmlHelpers}:
-
   <select name="categories">
     <%= select_options [['First', 1], ['Second', 2]] %>
   </select>
   
-==== Provided by {Sinatra::Numeric}:
-
-  <%= currency(100) %>
-  <!-- $100 -->
-
-  <%= percentage(100) %>
-  <!-- 100.00% -->
-
 == Copyright
 
 Copyright (c) 2010 Cyril David, Rico Sta. Cruz and Sinefunc, Inc.
