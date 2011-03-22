@@ -9,6 +9,7 @@ module Sinatra
   autoload :JsSupport,       File.expand_path('../support/jssupport', __FILE__)
   autoload :OhmErrorHelpers, File.expand_path('../support/ohmerrorhelpers', __FILE__)
   autoload :Numeric,         File.expand_path('../support/numeric', __FILE__)
+  autoload :IfHelpers,       File.expand_path('../support/ifhelpers', __FILE__)
 
   module Support
   end

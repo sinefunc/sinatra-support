@@ -2,19 +2,20 @@
 
 ==== A collection of useful utilities.
 
+== Plugins
+
+[{Sinatra::CssSupport}]       Provides CSS/Sass/Less support.
+[{Sinatra::JsSupport}]        Provides JavaScript/CoffeeScript support.
+[{Sinatra::Numeric}]          Helpers for showing percentages and currencies.
+[{Sinatra::DateForms}]        Provides dropdowns for year/month/date.
+
 == Helpers
 
 [{Sinatra::CountryHelpers}]   Country dropdowns and stuff.
 [{Sinatra::HtmlHelpers}]      Provides many common HTML helpers.
+[{Sinatra::IfHelpers}]        Common HAML condition helpers.
 [{Sinatra::OhmErrorHelpers}]  Allows you to present errors nicely
                               in HAML templates.
-
-== Plugins
-
-[{Sinatra::Numeric}]          Helpers for showing percentages and currencies.
-[{Sinatra::DateForms}]        Provides dropdowns for year/month/date.
-[{Sinatra::CssSupport}]       Provides CSS/Sass/Less support.
-[{Sinatra::JsSupport}]        Provides JavaScript/CoffeeScript support.
 
 == How to use
 
