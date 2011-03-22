@@ -13,6 +13,8 @@
 
 [{Sinatra::Numeric}]          Helpers for showing percentages and currencies.
 [{Sinatra::DateForms}]        Provides dropdowns for year/month/date.
+[{Sinatra::CssSupport}]       Provides CSS/Sass/Less support.
+[{Sinatra::JsSupport}]        Provides JavaScript/CoffeeScript support.
 
 == How to use
 
