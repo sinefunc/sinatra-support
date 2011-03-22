@@ -42,7 +42,7 @@ module Sinatra::CssSupport
 
       content_type :css, :charset => 'utf-8'
       last_modified File.mtime(fname)
-      cache_control :public, :must_revalidate, :max_age => settings.js_max_age
+      cache_control :public, :must_revalidate, :max_age => settings.css_max_age
 
       if fname =~ /\.scss$/
         scss File.read(fname)
