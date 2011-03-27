@@ -199,7 +199,7 @@ Note that you will need to set your Sass/SCSS <tt>load_path</tt> settings.
       <pre class="code"><span class="info file"># File 'lib/sinatra/support/csssupport.rb', line 32</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id registered'>registered</span><span class='lparen'>(</span><span class='id app'>app</span><span class='rparen'>)</span>
-  <span class='id app'>app</span><span class='period'>.</span><span class='id set'>set</span> <span class='symbol'>:css_max_age</span><span class='comma'>,</span> <span class='int'>86400</span><span class='op'>*</span><span class='int'>30</span>
+  <span class='id app'>app</span><span class='period'>.</span><span class='id set'>set</span> <span class='symbol'>:css_max_age</span><span class='comma'>,</span> <span class='id app'>app</span><span class='period'>.</span><span class='id development?'>development?</span> <span class='op'>?</span> <span class='int'>0</span> <span class='op'>:</span> <span class='int'>86400</span><span class='op'>*</span><span class='int'>30</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -283,7 +283,7 @@ Note that you will need to set your Sass/SCSS <tt>load_path</tt> settings.
 </div>
     
     <div id="footer">
-  Generated on Wed Mar 23 03:01:03 2011 by 
+  Generated on Sun Mar 27 15:07:42 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.6.4 (ruby-1.9.2).
 </div>
