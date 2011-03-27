@@ -79,15 +79,13 @@ I18n support.
 </span>  <span class='kw'>end</span>
 </pre>
 <p>
-Be sure that you have the <tt>I18n</tt> gem.
+Be sure that you have the <tt>I18n</tt> gem. Use <tt>gem install i18n</tt>, or if
+you&#8217;re using Bundler:
 </p>
 <pre class="code">
   <span class='comment'># Gemfile
 </span>  <span class='id gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>i18n</span><span class='tstring_end'>&quot;</span></span>
 </pre>
-<p>
-(or <tt>gem install i18n</tt>)
-</p>
 <p>
 Then put your locale YAML files into <tt>./config/locales</tt> (whatever
 path you use for <span class='object_link'><a href="#load_locales-instance_method" title="Sinatra::I18nSupport#load_locales (method)">#load_locales</a></span>:
@@ -96,6 +94,8 @@ path you use for <span class='object_link'><a href="#load_locales-instance_metho
   # config/locales/en.yml
   en:
     an_article: &quot;An article&quot;
+    create: &quot;Create&quot;
+    delete: &quot;Delete&quot;
 </pre>
 <h2>Helpers</h2>
 <h3><span class='object_link'><a href="I18nSupport/Helpers.html#t-instance_method" title="Sinatra::I18nSupport::Helpers#t (method)">t</a></span> - Translates something.</h3>
@@ -144,11 +144,9 @@ redefine the `current_locale` helper:
 <h2>Locale files</h2>
 <p>
 This gem does not ship with default options for time, date and such. You
-may want to get those from:
+may want to get those from the Rails-I18n project: <a
+href="https://github.com/svenfuchs/rails-i18n/tree/master/rails/locale">github.com/svenfuchs/rails-i18n/tree/master/rails/locale</a>
 </p>
-<pre class="code">
-  <span class='id https'>https</span><span class='symbol'>:/</span><span class='op'>/</span><span class='id github'>github</span><span class='period'>.</span><span class='id com'>com</span><span class='op'>/</span><span class='id svenfuchs'>svenfuchs</span><span class='op'>/</span><span class='id rails'>rails</span><span class='op'>-</span><span class='id i18n'>i18n</span><span class='op'>/</span><span class='id tree'>tree</span><span class='op'>/</span><span class='id master'>master</span><span class='op'>/</span><span class='id rails'>rails</span><span class='op'>/</span><span class='id locale'>locale</span>
-</pre>
 <h2>Using a different backend</h2>
 <p>
 Instead of calling <span class='object_link'><a href="#load_locales-instance_method" title="Sinatra::I18nSupport#load_locales (method)">#load_locales</a></span>, just load the right I18n backend using
@@ -341,7 +339,7 @@ Loads the locales in the given path.
 </div>
     
     <div id="footer">
-  Generated on Sun Mar 27 16:38:48 2011 by 
+  Generated on Sun Mar 27 16:52:48 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.6.4 (ruby-1.9.2).
 </div>
