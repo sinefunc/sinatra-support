@@ -8,12 +8,11 @@
 #     set :default_locale, 'fr'  # Optional; defaults to 'en'
 #   end
 #
-# Be sure that you have the +I18n+ gem.
+# Be sure that you have the +I18n+ gem. Use +gem install i18n+, or if you're
+# using Bundler:
 #
 #   # Gemfile
 #   gem "i18n"
-#
-# (or +gem install i18n+)
 #
 # Then put your locale YAML files into +./config/locales+ (whatever path you
 # use for {#load_locales}:
@@ -21,6 +20,8 @@
 #   # config/locales/en.yml
 #   en:
 #     an_article: "An article"
+#     create: "Create"
+#     delete: "Delete"
 #
 # == Helpers
 #
@@ -67,9 +68,8 @@
 # == Locale files
 #
 # This gem does not ship with default options for time, date and such.
-# You may want to get those from:
-#
-#   https://github.com/svenfuchs/rails-i18n/tree/master/rails/locale
+# You may want to get those from the Rails-I18n project:
+# https://github.com/svenfuchs/rails-i18n/tree/master/rails/locale
 # 
 # == Using a different backend
 #
