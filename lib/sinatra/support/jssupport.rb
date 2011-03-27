@@ -4,15 +4,17 @@
 #
 #   require 'sinatra/support/jssupport'
 #
-# Use {#serve_js} in the Sinatra DSL to serve up files.
+#   class Main < Sinatra::Base
+#     register Sinatra::JsSupport
+#     serve_js '/js', from: './app/js'
+#   end
 #
-#   register Sinatra::JsSupport
-#   serve_js '/js', from: './app/js'
+# You'll be able to access files via +/js+:
 #
-# Assuming you have a +app/js/jquery.js+ file, you will
-# then be able to access it from the given URL prefix.
-#
+#   # This will serve /app/js/jquery.js. (or .coffee)
 #   $ curl "http://localhost:4567/js/jquery.js"
+#
+# == CoffeeScript support
 #
 # This plugin supports CoffeeScript. To use it, simply
 # add a CoffeeScript file in the JS file path.
@@ -22,7 +24,12 @@
 #
 #   $ curl "http://localhost:4567/js/application.js"
 #
-# To use CoffeeScript, you will need the +coffee_script+ gem.
+# To use CoffeeScript, install the +coffee_script+ gem.
+# If you're using Bundler, that is:
+#
+#   # Gemfile
+#   gem "coffee-script", require: "coffee_script"
+#
 #
 module Sinatra::JsSupport
   def self.registered(app)

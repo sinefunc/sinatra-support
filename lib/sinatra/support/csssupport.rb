@@ -1,21 +1,33 @@
 # Support for Sass/SCSS/Less.
 #
-# == Usage
-#
 #   require 'sinatra/support/csssupport'
 #
-# Use {#serve_css} in the Sinatra DSL to serve up files.
+#   class Main < Sinatra::Base
+#     register Sinatra::CssSupport
+#     serve_css '/styles', from: './app/css'
+#   end
 #
-#   register Sinatra::CssSupport
-#   serve_css '/styles', from: './app/css'
+# You'll be able to access files via +/styles+:
 #
-# Assuming you have a +app/css/print.scss+ file, you will
-# then be able to access it from the given URL prefix.
-#
+#   # This will serve /app/css/print.css
 #   $ curl "http://localhost:4567/styles/print.css"
+#
+# == Sass/SCSS/Less support
 #
 # This plugin supports Sass, Less and SCSS and guesses by the
 # file name.
+#
+#   # Will serve /app/css/screen.css (or .sass, .less, .scss)
+#   # ...whichever it can find first.
+#
+#   $ curl "http://localhost:4567/styles/screen.css
+#
+# For Sass/SCSS support, install the +haml+ gem. For Less, use
+# the +less+ gem. If you're using Bundler:
+#
+#   # Gemfile
+#   gem "haml"
+#   gem "less"
 #
 # == Caveats
 #
