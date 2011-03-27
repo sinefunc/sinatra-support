@@ -76,12 +76,12 @@
 # Instead of calling {#load_locales}, just load the right I18n backend
 # using the I18n gem.
 #
-# You can also just use I18n.store_translations if you still want to use
+# You can also just use +I18n.store_translations+ if you still want to use
 # the default simple I18n backend.
 #
 # == Settings
 #
-# [+default_locale+]    The locale to use by default. Defaults to +"en"+.
+# [+default_locale+]    The locale to use by default. Defaults to +en+.
 #
 module Sinatra::I18nSupport
   def self.registered(app)
