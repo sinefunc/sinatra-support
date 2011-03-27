@@ -1,7 +1,17 @@
+v1.0.1 - Mar 27, 2011
+---------------------
+
+### Added:
+  * Implement Sinatra::I18nSupport
+
+### Misc:
+  * Update README with URLs
+  * Correct the wrong gem name in the documentation
+
 v1.0.0 - Mar 27, 2011
 ---------------------
 
-Massive 1.0 refactor and massive documentation update. Now sporting a 
+Massive 1.0 refactor and massive documentation update. Now sporting a
 completely new API and breaks compatibility with 0.2.0.
 
 ### Added:
