@@ -11,6 +11,7 @@
 [{Sinatra::JsSupport}]        Provides JavaScript/CoffeeScript support.
 [{Sinatra::Numeric}]          Helpers for showing percentages and currencies.
 [{Sinatra::DateForms}]        Provides dropdowns for year/month/date.
+[{Sinatra::I18nSupport}]      Provides I18n support.
 
 == Helpers
 

@@ -10,7 +10,7 @@ module Sinatra
   autoload :OhmErrorHelpers, File.expand_path('../support/ohmerrorhelpers', __FILE__)
   autoload :Numeric,         File.expand_path('../support/numeric', __FILE__)
   autoload :IfHelpers,       File.expand_path('../support/ifhelpers', __FILE__)
-  autoload :I18n,            File.expand_path('../support/i18n', __FILE__)
+  autoload :I18nSupport,     File.expand_path('../support/i18nsupport', __FILE__)
 
   module Support
   end

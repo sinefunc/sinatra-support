@@ -5,7 +5,7 @@ class I18nTest < Test::Unit::TestCase
 
   class App < Sinatra::Base
     use Rack::Session::Cookie
-    register Sinatra::I18n
+    register Sinatra::I18nSupport
     load_locales I18nTest::fixture_path('i18n')
 
     get('/get') { t('article.new') }

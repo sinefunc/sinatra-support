@@ -1,9 +1,9 @@
-# I18n.
+# I18n support.
 #
-#   require 'sinatra/support/i18n'
+#   require 'sinatra/support/i18nsupport'
 #
 #   class Main < Sinatra::Base
-#     register Sinatra::I18n
+#     register Sinatra::I18nSupport
 #     load_locales './config/locales'
 #     set :default_locale, 'fr'  # Optional; defaults to 'en'
 #   end
@@ -68,7 +68,7 @@
 #
 # [+default_locale+]    The locale to use by default. Defaults to +"en"+.
 #
-module Sinatra::I18n
+module Sinatra::I18nSupport
   def self.registered(app)
     require 'i18n'
     app.set :default_locale, 'en'
@@ -78,7 +78,7 @@ module Sinatra::I18n
   # Loads the locales in the given path.
   def load_locales(path)
     Dir[File.join(path, '*.yml')].each do |file|
-      ::I18n.backend.load_translations file
+      I18n.backend.load_translations file
     end
   end
 
@@ -89,11 +89,11 @@ module Sinatra::I18n
     end
 
     def locales
-      ::I18n.available_locales
+      I18n.available_locales
     end
 
     def t(what, options={})
-      ::I18n::t what, {:locale => current_locale}.merge(options)
+      I18n.t what, {:locale => current_locale}.merge(options)
     end
   end
 end
