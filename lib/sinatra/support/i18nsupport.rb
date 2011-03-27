@@ -34,13 +34,13 @@
 #   <%= l(Time.now) %>
 #   <%= l(Time.now, format: :short) %>
 #
-# == {Helpers#current_locale current_locale} - Returns the current locale name.
+# === {Helpers#current_locale current_locale} - Returns the current locale name.
 #
 #   <script>
 #     window.locale = <%= current_locale.inspect %>;
 #   </script>
 #
-# == {Helpers#available_locales available_locales} - A list of available locales.
+# === {Helpers#available_locales available_locales} - A list of available locales.
 #
 #   <% if available_locales.include?(:es) %>
 #     <a href="/locales/es">en Espanol</a>
