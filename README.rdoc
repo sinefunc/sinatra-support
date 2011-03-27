@@ -25,10 +25,11 @@ Source: http://github.com/sinefunc/sinatra-support
 Require the Sinatra support gem. For those using Bundler, that is:
 
   # Gemfile
-  gem "sinatra_support", require: "sinatra/support"
+  gem "sinatra-support", require: "sinatra/support"
 
 Or otherwise:
 
+  # gem install sinatra-support
   require 'sinatra/support'
 
 In your Sinatra application, use +register+ or +helpers+ to add
