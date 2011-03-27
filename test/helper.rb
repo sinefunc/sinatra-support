@@ -17,4 +17,13 @@ class Test::Unit::TestCase
   def settings
     @app ||= Sinatra::Application.new
   end
+
+  def self.fixture_path(*a)
+    root = File.expand_path('../fixtures', __FILE__)
+    File.join root, a
+  end
+
+  def fixture_path(*a)
+    self.class.fixture_path *a
+  end
 end

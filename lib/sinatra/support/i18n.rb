@@ -15,11 +15,18 @@
 #
 # (or +gem install i18n+)
 #
+# Then put your locale YAML files into +./config/locales+ (whatever path you
+# use for {#load_locales}:
+#
+#   # config/locales/en.yml
+#   en:
+#     an_article: "An article"
+#
 # == Helpers
 #
 # === {Helpers#t t} - Looks up a string.
 #
-#   <h3><%= t('article.create_new_article') %></h3>
+#   <h3><%= t('article.an_article') %></h3>
 #   <h5><%= t('article.delete', name: @article.to_s) %></h5>
 #
 # == {Helpers#current_locale current_locale} - Returns the current locale name.
@@ -28,9 +35,9 @@
 #     window.locale = <%= current_locale.inspect %>;
 #   </script>
 #
-# == {Helpers#locale? locale?} - Checks if a locale exists.
+# == {Helpers#locale? locales} - A list of available locales.
 #
-#   <% if locale?('es') %>
+#   <% if locales.include?(:es) %>
 #     <a href="/locales/es">en Espanol</a>
 #   <% end %>
 #
@@ -39,7 +46,7 @@
 # Set +session[:locale]+ to the locale name.
 #
 #   get '/locales/:locale' do |locale|
-#     not_found  unless locale?(locale)
+#     not_found  unless locales.include?(locale)
 #     session[:locale] = locale
 #   end
 #
@@ -52,29 +59,27 @@
 #     end
 #   end
 #
+# == Using a different backend
+#
+# Instead of calling {#load_locales}, just load the right I18n backend
+# using the I18n gem.
+#
 # == Settings
 #
 # [+default_locale+]    The locale to use by default. Defaults to +"en"+.
-# [+locales+]           A hash of the loaded locales. Populated when calling
-#                       {#load_locales}.
 #
 module Sinatra::I18n
   def self.registered(app)
     require 'i18n'
-
     app.set :default_locale, 'en'
-    app.set :locales, Hash.new
-
     app.helpers Helpers
   end
 
   # Loads the locales in the given path.
   def load_locales(path)
     Dir[File.join(path, '*.yml')].each do |file|
-       settings.locales.merge! YAML::load_file(file)
+      ::I18n.backend.load_translations file
     end
-
-    ::I18n.backend.load_translations(app.locales)
   end
 
   module Helpers
@@ -83,13 +88,12 @@ module Sinatra::I18n
       session[:locale] || settings.default_locale
     end
 
-    # Checks if a given locale name is defined.
-    def locale?(what)
-      settings.locales.keys.include?(what)
+    def locales
+      ::I18n.available_locales
     end
 
-    def t(*args)
-      ::I18n::t *args
+    def t(what, options={})
+      ::I18n::t what, {:locale => current_locale}.merge(options)
     end
   end
 end
