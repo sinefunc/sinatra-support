@@ -88,6 +88,11 @@ Conditional helpers for HAML (+checked_if+, +hide_if+, etc):
     <%= select_options [['First', 1], ['Second', 2]] %>
   </select>
   
+== Starting a new project?
+
+Also consider Rico Sta. Cruz's sinatra-template which already preloads some of
+Sinatra Support's conveniences and more. http://github.com/rstacruz/sinatra-template
+
 == Copyright
 
 Copyright (c) 2009-2011 Cyril David, Rico Sta. Cruz and Sinefunc, Inc.
