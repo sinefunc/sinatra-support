@@ -1,3 +1,15 @@
 tl:
   article:
     new: "Bagong Artikulo"
+
+  time:
+    formats:
+      default: %a, %d. %b %Y %H:%M:%S %z
+      short: %d. %b %H:%M
+      am: "am"
+      pm: "pm"
+
+  date:
+    abbr_day_names: [Sun, Mon, Tue, Wed, Thu, Fri, Sat]
+    abbr_month_names: [~, Ene, Peb, Mar, Abr, May, Hun, Hul, Aug, Set, Okt, Nob, Des]
+      

@@ -24,10 +24,15 @@
 #
 # == Helpers
 #
-# === {Helpers#t t} - Looks up a string.
+# === {Helpers#t t} - Translates something.
 #
 #   <h3><%= t('article.an_article') %></h3>
 #   <h5><%= t('article.delete', name: @article.to_s) %></h5>
+#
+# === {Helpers#t l} - Localizes something.
+#
+#   <%= l(Time.now) %>
+#   <%= l(Time.now, format: :short) %>
 #
 # == {Helpers#current_locale current_locale} - Returns the current locale name.
 #
@@ -35,9 +40,9 @@
 #     window.locale = <%= current_locale.inspect %>;
 #   </script>
 #
-# == {Helpers#locale? locales} - A list of available locales.
+# == {Helpers#available_locales available_locales} - A list of available locales.
 #
-#   <% if locales.include?(:es) %>
+#   <% if available_locales.include?(:es) %>
 #     <a href="/locales/es">en Espanol</a>
 #   <% end %>
 #
@@ -59,10 +64,20 @@
 #     end
 #   end
 #
+# == Locale files
+#
+# This gem does not ship with default options for time, date and such.
+# You may want to get those from:
+#
+#   https://github.com/svenfuchs/rails-i18n/tree/master/rails/locale
+# 
 # == Using a different backend
 #
 # Instead of calling {#load_locales}, just load the right I18n backend
 # using the I18n gem.
+#
+# You can also just use I18n.store_translations if you still want to use
+# the default simple I18n backend.
 #
 # == Settings
 #
@@ -88,8 +103,12 @@ module Sinatra::I18nSupport
       session[:locale] || settings.default_locale
     end
 
-    def locales
+    def available_locales
       I18n.available_locales
+    end
+
+    def l(what, options={})
+      I18n.l what, {:locale => current_locale}.merge(options)
     end
 
     def t(what, options={})

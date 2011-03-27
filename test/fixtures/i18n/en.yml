@@ -1,3 +1,15 @@
 en:
   article:
     new: "New Article"
+
+  time:
+    formats:
+      default: %a, %d. %b %Y %H:%M:%S %z
+      short: %d. %b %H:%M
+      am: "am"
+      pm: "pm"
+
+  date:
+    abbr_day_names: [Sun, Mon, Tue, Wed, Thu, Fri, Sat]
+    abbr_month_names: [~, Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
+      
