@@ -108,13 +108,13 @@ path you use for <span class='object_link'><a href="#load_locales-instance_metho
   &lt;%= l(Time.now) %&gt;
   &lt;%= l(Time.now, format: :short) %&gt;
 </pre>
-<h2><span class='object_link'><a href="I18nSupport/Helpers.html#current_locale-instance_method" title="Sinatra::I18nSupport::Helpers#current_locale (method)">current_locale</a></span> - Returns the current locale name.</h2>
+<h3><span class='object_link'><a href="I18nSupport/Helpers.html#current_locale-instance_method" title="Sinatra::I18nSupport::Helpers#current_locale (method)">current_locale</a></span> - Returns the current locale name.</h3>
 <pre class="code">
   &lt;script&gt;
     window.locale = &lt;%= current_locale.inspect %&gt;;
   &lt;/script&gt;
 </pre>
-<h2><span class='object_link'><a href="I18nSupport/Helpers.html#available_locales-instance_method" title="Sinatra::I18nSupport::Helpers#available_locales (method)">available_locales</a></span> - A list of available locales.</h2>
+<h3><span class='object_link'><a href="I18nSupport/Helpers.html#available_locales-instance_method" title="Sinatra::I18nSupport::Helpers#available_locales (method)">available_locales</a></span> - A list of available locales.</h3>
 <pre class="code">
   &lt;% if available_locales.include?(:es) %&gt;
     &lt;a href=&quot;/locales/es&quot;&gt;en Espanol&lt;/a&gt;
@@ -341,7 +341,7 @@ Loads the locales in the given path.
 </div>
     
     <div id="footer">
-  Generated on Sun Mar 27 16:36:44 2011 by 
+  Generated on Sun Mar 27 16:38:48 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.6.4 (ruby-1.9.2).
 </div>
