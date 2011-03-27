@@ -2,7 +2,8 @@
 
 ==== A collection of useful utilities.
 
-http://sinefunc.com/sinatra-support/
+Documentation: http://sinefunc.com/sinatra-support
+Source: http://github.com/sinefunc/sinatra-support
 
 == Plugins
 
