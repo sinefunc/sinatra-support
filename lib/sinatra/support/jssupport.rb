@@ -26,7 +26,7 @@
 #
 module Sinatra::JsSupport
   def self.registered(app)
-    app.set :js_max_age, 86400*30
+    app.set :js_max_age, app.development? ? 0 : 86400*30
   end
 
   def serve_js(url_prefix, options={})

@@ -30,7 +30,7 @@
 #
 module Sinatra::CssSupport
   def self.registered(app)
-    app.set :css_max_age, 86400*30
+    app.set :css_max_age, app.development? ? 0 : 86400*30
   end
 
   def serve_css(url_prefix, options={})
