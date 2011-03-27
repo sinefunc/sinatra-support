@@ -2,6 +2,9 @@
 
 ==== A collection of useful utilities.
 
+Sinatra Support's mission is to implement the things web apps will need 90% of the
+time. Think of it as Rails's conveniences done the Sinatra way.
+
 * *Documentation:* http://sinefunc.com/sinatra-support
 * *Source:* http://github.com/sinefunc/sinatra-support
 
