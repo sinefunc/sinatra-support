@@ -1,3 +1,13 @@
+v1.0.2 - Mar 29, 2011
+---------------------
+
+### Added:
+  * Implement CssSupport's `css_aggressive_mtime` directive
+
+### Minor changes:
+  * Update I18n helpers documentation
+  * Update documentation for JsSupport and CssSupport
+
 v1.0.1 - Mar 27, 2011
 ---------------------
 
