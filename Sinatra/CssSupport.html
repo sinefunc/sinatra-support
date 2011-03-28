@@ -69,41 +69,28 @@
     <p>
 Support for Sass/SCSS/Less.
 </p>
+<h2>Usage</h2>
 <pre class="code">
   <span class='id require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>sinatra/support/csssupport</span><span class='tstring_end'>'</span></span>
-
-  <span class='kw'>class</span> <span class='const'>Main</span> <span class='op'>&lt;</span> <span class='const'>Sinatra</span><span class='op'>::</span><span class='const'>Base</span>
-    <span class='id register'>register</span> <span class='const'>Sinatra</span><span class='op'>::</span><span class='const'>CssSupport</span>
-    <span class='id serve_css'>serve_css</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/styles</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='label'>from:</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>./app/css</span><span class='tstring_end'>'</span></span>
-  <span class='kw'>end</span>
 </pre>
 <p>
-You&#8217;ll be able to access files via <tt>/styles</tt>:
+Use <span class='object_link'><a href="#serve_css-instance_method" title="Sinatra::CssSupport#serve_css (method)">#serve_css</a></span> in the Sinatra DSL to serve up files.
 </p>
 <pre class="code">
-  # This will serve /app/css/print.css
+  <span class='id register'>register</span> <span class='const'>Sinatra</span><span class='op'>::</span><span class='const'>CssSupport</span>
+  <span class='id serve_css'>serve_css</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/styles</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='label'>from:</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>./app/css</span><span class='tstring_end'>'</span></span>
+</pre>
+<p>
+Assuming you have a <tt>app/css/print.scss</tt> file, you will then be able
+to access it from the given URL prefix.
+</p>
+<pre class="code">
   $ curl &quot;http://localhost:4567/styles/print.css&quot;
 </pre>
-<h2>Sass/SCSS/Less support</h2>
 <p>
 This plugin supports Sass, Less and SCSS and guesses by the file name.
 </p>
-<pre class="code">
-  # Will serve /app/css/screen.css (or .sass, .less, .scss)
-  # ...whichever it can find first.
-
-  $ curl &quot;http://localhost:4567/styles/screen.css
-</pre>
-<p>
-For Sass/SCSS support, install the <tt>haml</tt> gem. For Less, use the
-<tt>less</tt> gem. If you&#8217;re using Bundler:
-</p>
-<pre class="code">
-  <span class='comment'># Gemfile
-</span>  <span class='id gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>haml</span><span class='tstring_end'>&quot;</span></span>
-  <span class='id gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>less</span><span class='tstring_end'>&quot;</span></span>
-</pre>
-<h2>Caveats</h2>
+<h2>Sass caveats</h2>
 <p>
 Note that you will need to set your Sass/SCSS <tt>load_path</tt> settings.
 </p>
@@ -113,7 +100,36 @@ Note that you will need to set your Sass/SCSS <tt>load_path</tt> settings.
       <span class='symbol'>:load_paths</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>app/css</span><span class='tstring_end'>'</span></span> <span class='rbracket'>]</span>
     <span class='rbrace'>}</span>
     <span class='id m'>m</span><span class='period'>.</span><span class='id set'>set</span> <span class='symbol'>:scss</span><span class='comma'>,</span> <span class='kw'>self</span><span class='period'>.</span><span class='id scss'>scss</span><span class='period'>.</span><span class='id merge'>merge</span><span class='lparen'>(</span><span class='symbol'>:style</span> <span class='op'>=&gt;</span> <span class='symbol'>:compressed</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id m'>m</span><span class='period'>.</span><span class='id production?'>production?</span>
-  <span class='kw'>end</span></pre>
+  <span class='kw'>end</span>
+</pre>
+<h2>Less caveats</h2>
+<p>
+If you&#8217;re using Less, it&#8217;s best you separate your CSS into many
+files, as Less is pretty slow. By default however, CssSupport will ask
+browsers to recache all CSS files even when one is changed, which is to
+your disadvantage considering Less&#8217;s speed.
+</p>
+<p>
+You can disable this behavior so that browsers will only fetch CSS files
+that changed.
+</p>
+<pre class="code">
+  <span class='id register'>register</span> <span class='const'>Sinatra</span><span class='op'>::</span><span class='const'>CssSupport</span>
+  <span class='const'>Main</span><span class='period'>.</span><span class='id set'>set</span> <span class='symbol'>:css_aggressive_mtime</span><span class='comma'>,</span> <span class='kw'>false</span>
+</pre>
+<h2>Settings</h2>
+<dl>
+<dt><tt>css_max_age</tt></dt><dd><p>
+The maximum time (in seconds) a browser should hold onto a cached copy.
+(default: 30 days)
+</p>
+</dd>
+<dt><tt>css_aggressive_mtime</tt></dt><dd><p>
+If true, ask browsers to recache all CSS files when one is updated.
+Default: true
+</p>
+</dd>
+</dl>
 
 
   </div>
@@ -204,15 +220,17 @@ Note that you will need to set your Sass/SCSS <tt>load_path</tt> settings.
       <pre class="lines">
 
 
-44
-45
-46</pre>
+53
+54
+55
+56</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sinatra/support/csssupport.rb', line 44</span>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/csssupport.rb', line 53</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id registered'>registered</span><span class='lparen'>(</span><span class='id app'>app</span><span class='rparen'>)</span>
   <span class='id app'>app</span><span class='period'>.</span><span class='id set'>set</span> <span class='symbol'>:css_max_age</span><span class='comma'>,</span> <span class='id app'>app</span><span class='period'>.</span><span class='id development?'>development?</span> <span class='op'>?</span> <span class='int'>0</span> <span class='op'>:</span> <span class='int'>86400</span><span class='op'>*</span><span class='int'>30</span>
+  <span class='id app'>app</span><span class='period'>.</span><span class='id set'>set</span> <span class='symbol'>:css_aggressive_mtime</span><span class='comma'>,</span> <span class='kw'>true</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -238,16 +256,6 @@ Note that you will need to set your Sass/SCSS <tt>load_path</tt> settings.
       <pre class="lines">
 
 
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
 58
 59
 60
@@ -259,10 +267,26 @@ Note that you will need to set your Sass/SCSS <tt>load_path</tt> settings.
 66
 67
 68
-69</pre>
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sinatra/support/csssupport.rb', line 48</span>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/csssupport.rb', line 58</span>
 
 <span class='kw'>def</span> <span class='id serve_css'>serve_css</span><span class='lparen'>(</span><span class='id url_prefix'>url_prefix</span><span class='comma'>,</span> <span class='id options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id path'>path</span>   <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id join'>join</span><span class='lparen'>(</span><span class='id url_prefix'>url_prefix</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>*.css</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
@@ -272,7 +296,13 @@ Note that you will need to set your Sass/SCSS <tt>load_path</tt> settings.
     <span class='id fname'>fname</span> <span class='op'>=</span> <span class='const'>Dir</span><span class='lbracket'>[</span><span class='const'>File</span><span class='period'>.</span><span class='id join'>join</span><span class='lparen'>(</span><span class='id prefix'>prefix</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id name'>name</span><span class='rbrace'>}</span><span class='tstring_content'>.{css,scss,less}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id first'>first</span>  <span class='kw'>or</span> <span class='id pass'>pass</span>
 
     <span class='id content_type'>content_type</span> <span class='symbol'>:css</span><span class='comma'>,</span> <span class='symbol'>:charset</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>utf-8</span><span class='tstring_end'>'</span></span>
-    <span class='id last_modified'>last_modified</span> <span class='const'>File</span><span class='period'>.</span><span class='id mtime'>mtime</span><span class='lparen'>(</span><span class='id fname'>fname</span><span class='rparen'>)</span>
+
+    <span class='kw'>if</span> <span class='id settings'>settings</span><span class='period'>.</span><span class='id css_aggressive_mtime'>css_aggressive_mtime</span>
+      <span class='id last_modified'>last_modified</span> <span class='const'>Dir</span><span class='lbracket'>[</span><span class='id prefix'>prefix</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>**/*</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span><span class='period'>.</span><span class='id map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id f'>f</span><span class='op'>|</span> <span class='const'>File</span><span class='period'>.</span><span class='id mtime'>mtime</span><span class='lparen'>(</span><span class='id f'>f</span><span class='rparen'>)</span><span class='period'>.</span><span class='id to_i'>to_i</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id max'>max</span>
+    <span class='kw'>else</span>
+      <span class='id last_modified'>last_modified</span> <span class='const'>File</span><span class='period'>.</span><span class='id mtime'>mtime</span><span class='lparen'>(</span><span class='id fname'>fname</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+
     <span class='id cache_control'>cache_control</span> <span class='symbol'>:public</span><span class='comma'>,</span> <span class='symbol'>:must_revalidate</span><span class='comma'>,</span> <span class='symbol'>:max_age</span> <span class='op'>=&gt;</span> <span class='id settings'>settings</span><span class='period'>.</span><span class='id css_max_age'>css_max_age</span>
 
     <span class='kw'>if</span> <span class='id fname'>fname</span> <span class='op'>=~</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\.scss$</span><span class='regexp_end'>/</span></span>
@@ -296,7 +326,7 @@ Note that you will need to set your Sass/SCSS <tt>load_path</tt> settings.
 </div>
     
     <div id="footer">
-  Generated on Sun Mar 27 17:03:48 2011 by 
+  Generated on Tue Mar 29 07:10:04 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.6.4 (ruby-1.9.2).
 </div>
