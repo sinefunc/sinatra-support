@@ -1,35 +1,23 @@
 # Support for Sass/SCSS/Less.
 #
+# == Usage
+#
 #   require 'sinatra/support/csssupport'
 #
-#   class Main < Sinatra::Base
-#     register Sinatra::CssSupport
-#     serve_css '/styles', from: './app/css'
-#   end
+# Use {#serve_css} in the Sinatra DSL to serve up files.
 #
-# You'll be able to access files via +/styles+:
+#   register Sinatra::CssSupport
+#   serve_css '/styles', from: './app/css'
 #
-#   # This will serve /app/css/print.css
+# Assuming you have a +app/css/print.scss+ file, you will
+# then be able to access it from the given URL prefix.
+#
 #   $ curl "http://localhost:4567/styles/print.css"
-#
-# == Sass/SCSS/Less support
 #
 # This plugin supports Sass, Less and SCSS and guesses by the
 # file name.
 #
-#   # Will serve /app/css/screen.css (or .sass, .less, .scss)
-#   # ...whichever it can find first.
-#
-#   $ curl "http://localhost:4567/styles/screen.css
-#
-# For Sass/SCSS support, install the +haml+ gem. For Less, use
-# the +less+ gem. If you're using Bundler:
-#
-#   # Gemfile
-#   gem "haml"
-#   gem "less"
-#
-# == Caveats
+# == Sass caveats
 #
 # Note that you will need to set your Sass/SCSS +load_path+ settings.
 #
@@ -40,9 +28,31 @@
 #     m.set :scss, self.scss.merge(:style => :compressed) if m.production?
 #   end
 #
+# == Less caveats
+#
+# If you're using Less, it's best you separate your CSS into many files,
+# as Less is pretty slow. By default however, CssSupport will ask browsers
+# to recache all CSS files even when one is changed, which is to your
+# disadvantage considering Less's speed.
+#
+# You can disable this behavior so that browsers will only fetch CSS files
+# that changed.
+#
+#   register Sinatra::CssSupport
+#   Main.set :css_aggressive_mtime, false
+#
+# == Settings
+#
+# [+css_max_age+]            The maximum time (in seconds) a browser
+#                            should hold onto a cached copy.
+#                            (default: 30 days)
+# [+css_aggressive_mtime+]   If true, ask browsers to recache all CSS files
+#                            when one is updated. Default: true
+#                     
 module Sinatra::CssSupport
   def self.registered(app)
     app.set :css_max_age, app.development? ? 0 : 86400*30
+    app.set :css_aggressive_mtime, true
   end
 
   def serve_css(url_prefix, options={})
@@ -53,7 +63,13 @@ module Sinatra::CssSupport
       fname = Dir[File.join(prefix, "#{name}.{css,scss,less}")].first  or pass
 
       content_type :css, :charset => 'utf-8'
-      last_modified File.mtime(fname)
+
+      if settings.css_aggressive_mtime
+        last_modified Dir[prefix, "**/*"].map { |f| File.mtime(f).to_i }.max
+      else
+        last_modified File.mtime(fname)
+      end
+
       cache_control :public, :must_revalidate, :max_age => settings.css_max_age
 
       if fname =~ /\.scss$/
@@ -68,3 +84,4 @@ module Sinatra::CssSupport
     end
   end
 end
+
