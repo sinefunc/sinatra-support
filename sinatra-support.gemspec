@@ -1,7 +1,7 @@
 
 Gem::Specification.new do |s|
   s.name = "sinatra-support"
-  s.version = "1.0.2"
+  s.version = "1.0.3"
   s.summary = "A gem with many essential helpers for creating web apps with Sinatra."
   s.description = "Sinatra-support includes many helpers for forms, errors and many amazing things."
   s.authors = ["Cyril David", "Rico Sta. Cruz"]
