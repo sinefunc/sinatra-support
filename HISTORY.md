@@ -1,8 +1,14 @@
+v1.1.0 - May 27, 2011
+---------------------
+
+### Added:
+  * `Sinatra::CompassSupport` to add support for the Compass CSS framework
+
 v1.0.4 - May 15, 2011
 ---------------------
 
 ### Added:
-  * Implement Sinatra::MultiRender
+  * Implement `Sinatra::MultiRender`
 
 v1.0.3 - Mar 30, 2011
 ---------------------
