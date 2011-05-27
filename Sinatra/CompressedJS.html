@@ -142,6 +142,11 @@ add the approprate gem to your project.
   <span class='comment'># Gemfile
 </span>  <span class='id gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>coffee-script</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>require:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>coffee_script</span><span class='tstring_end'>&quot;</span></span>
 </pre>
+<h2>Caching</h2>
+<p>
+CompressedJS will cache compressed and combined scripts. This means that
+compression will only happen once.
+</p>
 <h2>Why no support for CSS compression?</h2>
 <p>
 If you use Sass/SCSS anyway, you can achieve the same thing by changing
@@ -149,6 +154,20 @@ Sass&#8217;s :output settings to :compressed. If you also use <tt>@import</tt> i
 Sass/SCSS, you can easily consolidate all CSS into one file without any
 need for a Sinatra plugin.
 </p>
+<h2>Extending with another JS compressor</h2>
+<p>
+This is unsupported, but you may change the JsFiles.compress function to
+use something else.
+</p>
+<pre class="code">
+  <span class='comment'># Sample custom compression (probably doesn't work)
+</span>  <span class='kw'>def</span> <span class='const'>JsFiles</span><span class='period'>.</span><span class='id compress'>compress</span><span class='lparen'>(</span><span class='id str'>str</span><span class='rparen'>)</span>
+    <span class='id file'>file</span>   <span class='op'>=</span> <span class='const'>Tempfile</span><span class='period'>.</span><span class='id new'>new</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id f'>f</span><span class='op'>|</span> <span class='id f'>f</span><span class='period'>.</span><span class='id write'>write</span> <span class='id str'>str</span> <span class='rbrace'>}</span>
+    <span class='id output'>output</span> <span class='op'>=</span> <span class='const'>Tempfile</span><span class='period'>.</span><span class='id new'>new</span>
+
+    <span class='id system'>system</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>closure-compiler </span><span class='embexpr_beg'>#{</span><span class='id file'>file</span><span class='period'>.</span><span class='id path'>path</span><span class='rbrace'>}</span><span class='tstring_content'> </span><span class='embexpr_beg'>#{</span><span class='id output'>output</span><span class='period'>.</span><span class='id path'>path</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id output'>output</span><span class='period'>.</span><span class='id read'>read</span>
+  <span class='kw'>end</span></pre>
 
 
   </div>
@@ -239,12 +258,12 @@ need for a Sinatra plugin.
       <pre class="lines">
 
 
-66
-67
-68</pre>
+85
+86
+87</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sinatra/support/compressedjs.rb', line 66</span>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/compressedjs.rb', line 85</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id registered'>registered</span><span class='lparen'>(</span><span class='id app'>app</span><span class='rparen'>)</span>
   <span class='id app'>app</span><span class='period'>.</span><span class='id set'>set</span> <span class='symbol'>:jsfiles_cache_max_age</span><span class='comma'>,</span> <span class='int'>86400</span><span class='op'>*</span><span class='int'>30</span>  <span class='kw'>unless</span> <span class='id app'>app</span><span class='period'>.</span><span class='id respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='symbol'>:jsfile_cache_max_age</span><span class='rparen'>)</span>
@@ -273,16 +292,16 @@ need for a Sinatra plugin.
       <pre class="lines">
 
 
-70
-71
-72
-73
-74
-75
-76</pre>
+89
+90
+91
+92
+93
+94
+95</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sinatra/support/compressedjs.rb', line 70</span>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/compressedjs.rb', line 89</span>
 
 <span class='kw'>def</span> <span class='id serve_compressed_js'>serve_compressed_js</span><span class='lparen'>(</span><span class='id name'>name</span><span class='comma'>,</span> <span class='id options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id jsfiles'>jsfiles</span> <span class='op'>=</span> <span class='const'>JsFiles</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='id options'>options</span><span class='rparen'>)</span>
@@ -301,7 +320,7 @@ need for a Sinatra plugin.
 </div>
     
     <div id="footer">
-  Generated on Fri May 27 14:08:59 2011 by 
+  Generated on Fri May 27 14:13:21 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.6.8 (ruby-1.9.2).
 </div>
