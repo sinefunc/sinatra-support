@@ -1,0 +1,2301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Class: UserAgent</title>
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '';
+  if (relpath != '') relpath += '/';
+</script>
+<script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (U)</a> &raquo; 
+    
+    
+    <span class="title">UserAgent</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Class List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
+</div>
+
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Class: UserAgent
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></span>
+      
+        <ul class="fullTree">
+          <li><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></li>
+          
+            <li class="next">UserAgent</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/sinatra/support/useragenthelpers.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="UA_REGEXP-constant" class="">UA_REGEXP =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='regexp_beg'>%r{</span><span class='tstring_content'>([^ /]+)/([^ ]+)(?: \(([^)]+)\))?</span><span class='regexp_end'>}</span></span></pre></dd>
+      
+    </dl>
+  
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#android1%3F-instance_method" title="#android1? (instance method)">- (Boolean) <strong>android1?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#android2%3F-instance_method" title="#android2? (instance method)">- (Boolean) <strong>android2?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#android%3F-instance_method" title="#android? (instance method)">- (Boolean) <strong>android?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#blackberry%3F-instance_method" title="#blackberry? (instance method)">- (Boolean) <strong>blackberry?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#body_class-instance_method" title="#body_class (instance method)">- (Object) <strong>body_class</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Returns the list of applicable browser features.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#chrome%3F-instance_method" title="#chrome? (instance method)">- (Boolean) <strong>chrome?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#gecko20%3F-instance_method" title="#gecko20? (instance method)">- (Boolean) <strong>gecko20?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#gecko30%3F-instance_method" title="#gecko30? (instance method)">- (Boolean) <strong>gecko30?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#gecko35%3F-instance_method" title="#gecko35? (instance method)">- (Boolean) <strong>gecko35?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#gecko36%3F-instance_method" title="#gecko36? (instance method)">- (Boolean) <strong>gecko36?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#gecko40%3F-instance_method" title="#gecko40? (instance method)">- (Boolean) <strong>gecko40?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Different Firefox versions.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#gecko%3F-instance_method" title="#gecko? (instance method)">- (Boolean) <strong>gecko?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#gecko_old%3F-instance_method" title="#gecko_old? (instance method)">- (Boolean) <strong>gecko_old?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#gecko_version%3F-instance_method" title="#gecko_version? (instance method)">- (Boolean) <strong>gecko_version?</strong>(from, to) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ie6%3F-instance_method" title="#ie6? (instance method)">- (Boolean) <strong>ie6?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ie7%3F-instance_method" title="#ie7? (instance method)">- (Boolean) <strong>ie7?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ie8%3F-instance_method" title="#ie8? (instance method)">- (Boolean) <strong>ie8?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ie9%3F-instance_method" title="#ie9? (instance method)">- (Boolean) <strong>ie9?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+IE.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ie%3F-instance_method" title="#ie? (instance method)">- (Boolean) <strong>ie?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#initialize-instance_method" title="#initialize (instance method)">- (UserAgent) <strong>initialize</strong>(ua) </a>
+    
+
+    
+  </span>
+  
+    <span class="note title constructor">constructor</span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+A new instance of UserAgent.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ios%3F-instance_method" title="#ios? (instance method)">- (Boolean) <strong>ios?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ipad%3F-instance_method" title="#ipad? (instance method)">- (Boolean) <strong>ipad?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#iphone%3F-instance_method" title="#iphone? (instance method)">- (Boolean) <strong>iphone?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#linux%3F-instance_method" title="#linux? (instance method)">- (Boolean) <strong>linux?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+OS&#8217;s and devices.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#mac%3F-instance_method" title="#mac? (instance method)">- (Boolean) <strong>mac?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#nokia%3F-instance_method" title="#nokia? (instance method)">- (Boolean) <strong>nokia?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#opera%3F-instance_method" title="#opera? (instance method)">- (Boolean) <strong>opera?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#osx%3F-instance_method" title="#osx? (instance method)">- (Boolean) <strong>osx?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#rim%3F-instance_method" title="#rim? (instance method)">- (Boolean) <strong>rim?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#safari%3F-instance_method" title="#safari? (instance method)">- (Boolean) <strong>safari?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#webkit%3F-instance_method" title="#webkit? (instance method)">- (Boolean) <strong>webkit?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>
+Browsers.
+</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#windows%3F-instance_method" title="#windows? (instance method)">- (Boolean) <strong>windows?</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <div class="method_details first">
+  <p class="signature first" id="initialize-instance_method">
+  
+    - (<tt><span class='object_link'><a href="" title="UserAgent (class)">UserAgent</a></span></tt>) <strong>initialize</strong>(ua) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+A new instance of UserAgent
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+37
+38
+39
+40
+41
+42
+43</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/useragenthelpers.rb', line 37</span>
+
+<span class='kw'>def</span> <span class='id initialize'>initialize</span><span class='lparen'>(</span><span class='id ua'>ua</span><span class='rparen'>)</span>
+  <span class='ivar'>@ua_string</span> <span class='op'>=</span> <span class='id ua'>ua</span>
+  <span class='ivar'>@ua</span> <span class='op'>=</span> <span class='id ua'>ua</span><span class='period'>.</span><span class='id scan'>scan</span><span class='lparen'>(</span><span class='const'>UA_REGEXP</span><span class='rparen'>)</span><span class='period'>.</span><span class='id map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id r'>r</span><span class='op'>|</span>
+    <span class='id r'>r</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id r'>r</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id split'>split</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>;</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id s'>s</span><span class='op'>|</span> <span class='id s'>s</span><span class='period'>.</span><span class='id strip'>strip</span> <span class='rbrace'>}</span>  <span class='kw'>unless</span> <span class='id r'>r</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id nil?'>nil?</span>
+    <span class='lbrace'>{</span> <span class='symbol'>:product</span> <span class='op'>=&gt;</span> <span class='id r'>r</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:version</span> <span class='op'>=&gt;</span> <span class='id r'>r</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:details</span> <span class='op'>=&gt;</span> <span class='id r'>r</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
+  <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+  
+</div>
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="android1?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>android1?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+59</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/useragenthelpers.rb', line 59</span>
+
+<span class='kw'>def</span> <span class='id android1?'>android1?</span><span class='lparen'>(</span><span class='rparen'>)</span>  <span class='id detail?'>detail?</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^Android 1\.</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Mozilla</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="android2?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>android2?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+60</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/useragenthelpers.rb', line 60</span>
+
+<span class='kw'>def</span> <span class='id android2?'>android2?</span><span class='lparen'>(</span><span class='rparen'>)</span>  <span class='id detail?'>detail?</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^Android 2\.</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Mozilla</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="android?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>android?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+58</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/useragenthelpers.rb', line 58</span>
+
+<span class='kw'>def</span> <span class='id android?'>android?</span><span class='lparen'>(</span><span class='rparen'>)</span>   <span class='id detail?'>detail?</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^Android</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Mozilla</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="blackberry?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>blackberry?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+66</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/useragenthelpers.rb', line 66</span>
+
+<span class='kw'>def</span> <span class='id blackberry?'>blackberry?</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='id detail?'>detail?</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^Blackberry</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Mozilla</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="body_class-instance_method">
+  
+    - (<tt><span class='object_link'><a href="Object.html" title="Object (class)">Object</a></span></tt>) <strong>body_class</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Returns the list of applicable browser features.
+</p>
+<h2>Examples</h2>
+<pre class="code">
+  &lt;body class=&quot;&lt;%= browser.body_class %&gt;&quot;&gt;
+</pre>
+<p>
+This can return one of the following:
+</p>
+<pre class="code">
+  &lt;body class=&quot;ios webkit ipad&quot;&gt;
+  &lt;body class=&quot;chrome linux webkit&quot;&gt;
+  &lt;body class=&quot;gecko linux&quot;&gt;
+  &lt;body class=&quot;windows ie ie6&quot;&gt;</pre>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+102
+103
+104
+105
+106
+107
+108
+109</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/useragenthelpers.rb', line 102</span>
+
+<span class='kw'>def</span> <span class='id body_class'>body_class</span>
+  <span class='lparen'>(</span><span class='qwords_beg'>%w(</span><span class='tstring_content'>webkit</span><span class='words_sep'> </span><span class='tstring_content'>chrome</span><span class='words_sep'> </span><span class='tstring_content'>safari</span><span class='words_sep'> </span><span class='tstring_content'>ios</span><span class='words_sep'> </span><span class='tstring_content'>gecko</span><span class='words_sep'> </span><span class='tstring_content'>opera</span><span class='words_sep'> </span><span class='tstring_content'>ie</span><span class='words_sep'> </span><span class='tstring_content'>linux</span><span class='words_sep'>)</span> <span class='op'>+</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>blackberry</span><span class='words_sep'> </span><span class='tstring_content'>nokia</span><span class='words_sep'> </span><span class='tstring_content'>android</span><span class='words_sep'> </span><span class='tstring_content'>iphone</span><span class='words_sep'>)</span> <span class='op'>+</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>gecko36</span><span class='words_sep'> </span><span class='tstring_content'>gecko35</span><span class='words_sep'> </span><span class='tstring_content'>gecko30</span><span class='words_sep'> </span><span class='tstring_content'>gecko20</span><span class='words_sep'> </span><span class='tstring_content'>gecko_old</span><span class='words_sep'>)</span> <span class='op'>+</span>
+   <span class='qwords_beg'>%w(</span><span class='tstring_content'>ipad</span><span class='words_sep'> </span><span class='tstring_content'>windows</span><span class='words_sep'> </span><span class='tstring_content'>osx</span><span class='words_sep'> </span><span class='tstring_content'>mac</span><span class='words_sep'> </span><span class='tstring_content'>ie6</span><span class='words_sep'> </span><span class='tstring_content'>ie7</span><span class='words_sep'> </span><span class='tstring_content'>ie8</span><span class='words_sep'> </span><span class='tstring_content'>ie9</span><span class='words_sep'>)</span><span class='rparen'>)</span><span class='period'>.</span><span class='id map'>map</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id aspect'>aspect</span><span class='op'>|</span>
+    <span class='id aspect'>aspect</span>  <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id send'>send</span> <span class='symbol'>:#{</span><span class='id aspect'>aspect</span><span class='rbrace'>}</span><span class='tstring_content'>?</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span><span class='period'>.</span><span class='id compact'>compact</span><span class='period'>.</span><span class='id join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'> </span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="chrome?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>chrome?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+47</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/useragenthelpers.rb', line 47</span>
+
+<span class='kw'>def</span> <span class='id chrome?'>chrome?</span><span class='lparen'>(</span><span class='rparen'>)</span>    <span class='id product?'>product?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Chrome</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="gecko20?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>gecko20?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+79</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/useragenthelpers.rb', line 79</span>
+
+<span class='kw'>def</span> <span class='id gecko20?'>gecko20?</span><span class='lparen'>(</span><span class='rparen'>)</span>   <span class='id gecko_version?'>gecko_version?</span><span class='lparen'>(</span><span class='int'>20061010</span><span class='comma'>,</span> <span class='int'>20080610</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="gecko30?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>gecko30?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+78</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/useragenthelpers.rb', line 78</span>
+
+<span class='kw'>def</span> <span class='id gecko30?'>gecko30?</span><span class='lparen'>(</span><span class='rparen'>)</span>   <span class='id gecko_version?'>gecko_version?</span><span class='lparen'>(</span><span class='int'>20080610</span><span class='comma'>,</span> <span class='int'>20090612</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="gecko35?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>gecko35?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+77</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/useragenthelpers.rb', line 77</span>
+
+<span class='kw'>def</span> <span class='id gecko35?'>gecko35?</span><span class='lparen'>(</span><span class='rparen'>)</span>   <span class='id gecko_version?'>gecko_version?</span><span class='lparen'>(</span><span class='int'>20090612</span><span class='comma'>,</span> <span class='int'>20091111</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="gecko36?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>gecko36?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+76</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/useragenthelpers.rb', line 76</span>
+
+<span class='kw'>def</span> <span class='id gecko36?'>gecko36?</span><span class='lparen'>(</span><span class='rparen'>)</span>   <span class='id gecko_version?'>gecko_version?</span><span class='lparen'>(</span><span class='int'>20091111</span><span class='comma'>,</span> <span class='int'>20100401</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="gecko40?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>gecko40?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Different Firefox versions
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+75</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/useragenthelpers.rb', line 75</span>
+
+<span class='kw'>def</span> <span class='id gecko40?'>gecko40?</span><span class='lparen'>(</span><span class='rparen'>)</span>   <span class='id gecko_version?'>gecko_version?</span><span class='lparen'>(</span><span class='int'>20100401</span><span class='comma'>,</span> <span class='int'>20110101</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="gecko?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>gecko?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+50</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/useragenthelpers.rb', line 50</span>
+
+<span class='kw'>def</span> <span class='id gecko?'>gecko?</span><span class='lparen'>(</span><span class='rparen'>)</span>     <span class='id product?'>product?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Gecko</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="gecko_old?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>gecko_old?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+80</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/useragenthelpers.rb', line 80</span>
+
+<span class='kw'>def</span> <span class='id gecko_old?'>gecko_old?</span><span class='lparen'>(</span><span class='rparen'>)</span> <span class='id gecko_version?'>gecko_version?</span><span class='lparen'>(</span><span class='int'>0</span><span class='comma'>,</span> <span class='int'>20061010</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="gecko_version?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>gecko_version?</strong>(from, to) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+82
+83
+84
+85
+86
+87</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/useragenthelpers.rb', line 82</span>
+
+<span class='kw'>def</span> <span class='id gecko_version?'>gecko_version?</span><span class='lparen'>(</span><span class='id from'>from</span><span class='comma'>,</span> <span class='id to'>to</span><span class='rparen'>)</span>
+  <span class='id g'>g</span> <span class='op'>=</span> <span class='id product'>product</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Gecko</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='kw'>nil</span>  <span class='kw'>if</span> <span class='id g'>g</span><span class='period'>.</span><span class='id nil?'>nil?</span>
+  <span class='id v'>v</span> <span class='op'>=</span> <span class='id g'>g</span><span class='lbracket'>[</span><span class='symbol'>:version</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>0</span><span class='op'>...</span><span class='int'>8</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id to_i'>to_i</span>
+  <span class='lparen'>(</span><span class='id v'>v</span> <span class='op'>&gt;=</span> <span class='id from'>from</span><span class='rparen'>)</span> <span class='kw'>and</span> <span class='lparen'>(</span><span class='id v'>v</span> <span class='op'>&lt;</span> <span class='id to'>to</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="ie6?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>ie6?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+72</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/useragenthelpers.rb', line 72</span>
+
+<span class='kw'>def</span> <span class='id ie6?'>ie6?</span><span class='lparen'>(</span><span class='rparen'>)</span>       <span class='id detail?'>detail?</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^MSIE 6</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Mozilla</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="ie7?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>ie7?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+71</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/useragenthelpers.rb', line 71</span>
+
+<span class='kw'>def</span> <span class='id ie7?'>ie7?</span><span class='lparen'>(</span><span class='rparen'>)</span>       <span class='id detail?'>detail?</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^MSIE 7.0</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Mozilla</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="ie8?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>ie8?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+70</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/useragenthelpers.rb', line 70</span>
+
+<span class='kw'>def</span> <span class='id ie8?'>ie8?</span><span class='lparen'>(</span><span class='rparen'>)</span>       <span class='id detail?'>detail?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>MSIE 8.0</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Mozilla</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="ie9?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>ie9?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+IE
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+69</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/useragenthelpers.rb', line 69</span>
+
+<span class='kw'>def</span> <span class='id ie9?'>ie9?</span><span class='lparen'>(</span><span class='rparen'>)</span>       <span class='id detail?'>detail?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>MSIE 9.0</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Mozilla</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="ie?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>ie?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+52</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/useragenthelpers.rb', line 52</span>
+
+<span class='kw'>def</span> <span class='id ie?'>ie?</span><span class='lparen'>(</span><span class='rparen'>)</span>        <span class='id detail?'>detail?</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^MSIE</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Mozilla</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="ios?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>ios?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+49</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/useragenthelpers.rb', line 49</span>
+
+<span class='kw'>def</span> <span class='id ios?'>ios?</span><span class='lparen'>(</span><span class='rparen'>)</span>       <span class='id product?'>product?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Safari</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id product?'>product?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Mobile</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="ipad?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>ipad?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+62</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/useragenthelpers.rb', line 62</span>
+
+<span class='kw'>def</span> <span class='id ipad?'>ipad?</span><span class='lparen'>(</span><span class='rparen'>)</span>      <span class='id detail?'>detail?</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^iPad</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Mozilla</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="iphone?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>iphone?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+56</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/useragenthelpers.rb', line 56</span>
+
+<span class='kw'>def</span> <span class='id iphone?'>iphone?</span><span class='lparen'>(</span><span class='rparen'>)</span>    <span class='id detail?'>detail?</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^iPhone</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Mozilla</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="linux?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>linux?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+OS&#8217;s and devices
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+55</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/useragenthelpers.rb', line 55</span>
+
+<span class='kw'>def</span> <span class='id linux?'>linux?</span><span class='lparen'>(</span><span class='rparen'>)</span>     <span class='id detail?'>detail?</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^Linux</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Mozilla</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="mac?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>mac?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+65</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/useragenthelpers.rb', line 65</span>
+
+<span class='kw'>def</span> <span class='id mac?'>mac?</span><span class='lparen'>(</span><span class='rparen'>)</span>       <span class='id detail?'>detail?</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^Macintosh</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Mozilla</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='op'>||</span> <span class='id osx?'>osx?</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="nokia?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>nokia?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+61</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/useragenthelpers.rb', line 61</span>
+
+<span class='kw'>def</span> <span class='id nokia?'>nokia?</span><span class='lparen'>(</span><span class='rparen'>)</span>     <span class='id detail?'>detail?</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^Nokia</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Mozilla</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='op'>||</span> <span class='id detail?'>detail?</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^Series[38]0</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Mozilla</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="opera?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>opera?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+51</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/useragenthelpers.rb', line 51</span>
+
+<span class='kw'>def</span> <span class='id opera?'>opera?</span><span class='lparen'>(</span><span class='rparen'>)</span>     <span class='id product?'>product?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Opera</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="osx?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>osx?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+64</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/useragenthelpers.rb', line 64</span>
+
+<span class='kw'>def</span> <span class='id osx?'>osx?</span><span class='lparen'>(</span><span class='rparen'>)</span>       <span class='id detail?'>detail?</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^(Intel )?Mac OS X</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Mozilla</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="rim?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>rim?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+57</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/useragenthelpers.rb', line 57</span>
+
+<span class='kw'>def</span> <span class='id rim?'>rim?</span><span class='lparen'>(</span><span class='rparen'>)</span>       <span class='id detail?'>detail?</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^Blackberry</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Mozilla</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="safari?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>safari?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+48</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/useragenthelpers.rb', line 48</span>
+
+<span class='kw'>def</span> <span class='id safari?'>safari?</span><span class='lparen'>(</span><span class='rparen'>)</span>    <span class='id product?'>product?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Safari</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='id chrome?'>chrome?</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="webkit?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>webkit?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>
+Browsers
+</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+46</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/useragenthelpers.rb', line 46</span>
+
+<span class='kw'>def</span> <span class='id webkit?'>webkit?</span><span class='lparen'>(</span><span class='rparen'>)</span>    <span class='id product?'>product?</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>AppleWebKit</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="windows?-instance_method">
+  
+    - (<tt>Boolean</tt>) <strong>windows?</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+63</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/useragenthelpers.rb', line 63</span>
+
+<span class='kw'>def</span> <span class='id windows?'>windows?</span><span class='lparen'>(</span><span class='rparen'>)</span>   <span class='id detail?'>detail?</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^Windows</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Mozilla</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Fri May 27 12:50:45 2011 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.6.8 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>

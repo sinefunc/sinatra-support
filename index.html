@@ -106,6 +106,10 @@ Provides many common HTML helpers.
 Common HAML condition helpers.
 </p>
 </dd>
+<dt><span class='object_link'><a href="Sinatra/UserAgentHelpers.html" title="Sinatra::UserAgentHelpers (module)">Sinatra::UserAgentHelpers</a></span></dt><dd><p>
+Browser detection.
+</p>
+</dd>
 <dt><span class='object_link'><a href="Sinatra/OhmErrorHelpers.html" title="Sinatra::OhmErrorHelpers (module)">Sinatra::OhmErrorHelpers</a></span></dt><dd><p>
 Allows you to present errors nicely in HAML templates.
 </p>
@@ -138,6 +142,17 @@ add in plugins as you need them.
   <span class='kw'>end</span>
 </pre>
 <h2>Common examples</h2>
+<h4>Provided by <span class='object_link'><a href="Sinatra/UserAgentHelpers.html" title="Sinatra::UserAgentHelpers (module)">Sinatra::UserAgentHelpers</a></span>:</h4>
+<p>
+Detect browser versions easily.
+</p>
+<pre class="code">
+  <span class='id helpers'>helpers</span> <span class='const'>Sinatra</span><span class='op'>::</span><span class='const'>UserAgentHelpers</span>
+
+  <span class='kw'>if</span> <span class='id browser'>browser</span><span class='period'>.</span><span class='id ios?'>ios?</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='id browser'>browser</span><span class='period'>.</span><span class='id ipad?'>ipad?</span>
+    <span class='id redirect'>redirect</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/touch</span><span class='tstring_end'>'</span></span>
+  <span class='kw'>end</span>
+</pre>
 <h4>Provided by <span class='object_link'><a href="Sinatra/CssSupport.html" title="Sinatra::CssSupport (module)">Sinatra::CssSupport</a></span>:</h4>
 <p>
 Serve up dynamic stylesheets (Sass/Less) with ease. Dynamic JavaScript
@@ -197,7 +212,7 @@ See LICENSE for details.
 </div></div>
     
     <div id="footer">
-  Generated on Fri May 27 12:32:06 2011 by 
+  Generated on Fri May 27 12:50:44 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.6.8 (ruby-1.9.2).
 </div>
