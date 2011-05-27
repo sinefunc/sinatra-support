@@ -225,7 +225,7 @@ class JsFiles
   # Returns a combined, minifed source of all the files.
   def compressed
     require 'jsmin'
-    @compressed ||= self.class.compress(str)
+    @compressed ||= self.class.compress(combined)
   end
 
   def self.compress(str)
