@@ -17,6 +17,7 @@ time. Think of it as Rails's conveniences done the Sinatra way.
 [{Sinatra::I18nSupport}]      Provides I18n support.
 [{Sinatra::MultiRender}]      Allow rendering from multiple view paths and auto-guessing template engines.
 [{Sinatra::CompassSupport}]   Adds support for the Compass CSS framework.
+[{Sinatra::CompressedJS}]     JavaScript compression.
 
 == Helpers
 

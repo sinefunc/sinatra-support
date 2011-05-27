@@ -19,11 +19,26 @@ class Test::Unit::TestCase
   end
 
   def self.fixture_path(*a)
-    root = File.expand_path('../fixtures', __FILE__)
-    File.join root, a
+    fx *a
   end
 
   def fixture_path(*a)
-    self.class.fixture_path *a
+    fx *a
   end
+
+  def save_and_open_page
+    f = Tempfile.new(['', '.html'])
+    path = f.path
+    f.close!
+    f.unlink
+
+    File.open(path, 'w') { |f| f.write last_response.body }
+
+    system "open \"#{path}\""
+  end
+end
+
+def fx(*a)
+  root = File.expand_path('../fixtures', __FILE__)
+  File.join root, a
 end

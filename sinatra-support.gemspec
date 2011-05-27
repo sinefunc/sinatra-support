@@ -17,6 +17,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency "mocha"
   s.add_development_dependency "nokogiri"
   s.add_development_dependency "contest"
+  s.add_development_dependency "coffee-script", "~> 2.1.1"
+  s.add_development_dependency "jsmin", "~> 1.0.1"
 end
 
 # gem build *.gemspec
