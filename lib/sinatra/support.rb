@@ -8,6 +8,7 @@ module Sinatra
   autoload :HtmlHelpers,     File.expand_path('../support/htmlhelpers', __FILE__)
   autoload :JsSupport,       File.expand_path('../support/jssupport', __FILE__)
   autoload :OhmErrorHelpers, File.expand_path('../support/ohmerrorhelpers', __FILE__)
+  autoload :UserAgentHelpers,File.expand_path('../support/useragenthelpers', __FILE__)
   autoload :Numeric,         File.expand_path('../support/numeric', __FILE__)
   autoload :IfHelpers,       File.expand_path('../support/ifhelpers', __FILE__)
   autoload :I18nSupport,     File.expand_path('../support/i18nsupport', __FILE__)

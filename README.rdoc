@@ -23,6 +23,7 @@ time. Think of it as Rails's conveniences done the Sinatra way.
 [{Sinatra::CountryHelpers}]   Country dropdowns and stuff.
 [{Sinatra::HtmlHelpers}]      Provides many common HTML helpers.
 [{Sinatra::IfHelpers}]        Common HAML condition helpers.
+[{Sinatra::UserAgentHelpers}] Browser detection.
 [{Sinatra::OhmErrorHelpers}]  Allows you to present errors nicely
                               in HAML templates.
 
@@ -48,6 +49,16 @@ in plugins as you need them.
   end
 
 == Common examples
+
+==== Provided by {Sinatra::UserAgentHelpers}:
+
+Detect browser versions easily.
+
+  helpers Sinatra::UserAgentHelpers
+
+  if browser.ios? && !browser.ipad?
+    redirect '/touch'
+  end
 
 ==== Provided by {Sinatra::CssSupport}:
 
