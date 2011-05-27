@@ -3,7 +3,7 @@
 # == Usage example
 #
 # Assuming you have JavaScript files stored in +./app/js+, and you want to serve
-# the compressed JS in +http://yoursite.com/js/compressed.js+:
+# the compressed JS in +yoursite.com/js/compressed.js+:
 #
 #   # CompressedJS is recommended to be used alongside JsSupport to serve
 #   # raw JS files in development mode. This will make your /app/js/*.js
@@ -11,14 +11,12 @@
 #
 #   register Sinatra::JsSupport
 #   serve_js '/js', from: './app/js'
-#
-# Then load the {CompressedJS} plugin:
-#
-#   register Sinatra::CompressedJS
+#   
+#   register Sinatra::CompressedJS        # Load the CompressedJS plugin
 #
 #   serve_compressed_js :app_js,          # The name (used later in your views)
-#     :prefix => '/js',                   # Where the individual files can be accessed at
-#     :root   => './app/js',              # The root of your files
+#     :prefix => '/js',                   # Where the individual JS files can be accessed at
+#     :root   => './app/js',              # The root of your JS files
 #     :path   => '/js/compressed.js',     # The URL where the compressed JS will served at
 #     :files  =>                          # List of files
 #       Dir['./app/js/vendor/*.js'] +
@@ -27,11 +25,12 @@
 # Note that +:prefix+ and +:root+ are the same things passed onto {JsSupport#serve_js serve_js}.
 #
 # In your template view, add this before +</body>+:
+# (The name +app_js+ comes from the first parameter passed to
+# {#serve_compressed_js}.)
 #
 #   <%= settings.app_js.to_html %>
 #
-# (The name +app_js+ comes from the first parameter passed to
-# {#serve_compressed_js}.)
+# == Example output
 #
 # In development mode, this will probably output:
 #
@@ -56,6 +55,11 @@
 #
 #   # Gemfile
 #   gem "coffee-script", require: "coffee_script"
+#
+# == More functions
+#
+# Doing +settings.app_js+ returns a {JsFiles} instance. See the {JsFiles} class
+# for more info on things you can do.
 #
 # == Caching
 #
@@ -119,14 +123,25 @@ end
 #
 # === Usage example
 #
-#   files  = Dir['public/js/jquery.*.js']
-#   files += Dir['public/js/app.*.js']
+# In Sinatra, doing {CompressedJS#serve_compressed_js} will make a
+# JsFiles instance:
 #
+#   serve_compressed_js :js_files,
+#     :prefix => '/javascript',
+#     :path   => '/javascript/combined.js',
+#     :root   => './app/js'
+#     files   =>
+#       Dir['public/js/jquery.*.js'].sort +
+#       Dir['public/js/app.*.js'].sort
+#
+#   js_files.is_a?(JsFiles)  #=> true
+#   js_files.mtime           #=> (Time) 2010-09-02 8:00PM
+#
+# Or outside Sinatra, just instanciate it as so:
+# 
 #   js_files = JsFiles.new(:files => files,
 #     :prefix => '/javascript',
 #     :root => './app/js')
-#
-#   js_files.mtime  #=> (Time) 2010-09-02 8:00PM
 #
 # You can use #to_html in views:
 #
