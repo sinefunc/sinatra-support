@@ -72,8 +72,7 @@ Serves compressed JS.
 <h2>Usage example</h2>
 <p>
 Assuming you have JavaScript files stored in <tt>./app/js</tt>, and you
-want to serve the compressed JS in +<a
-href="http://yoursite.com/js/compressed.js">yoursite.com/js/compressed.js</a>+:
+want to serve the compressed JS in <tt>yoursite.com/js/compressed.js</tt>:
 </p>
 <pre class="code">
   <span class='comment'># CompressedJS is recommended to be used alongside JsSupport to serve
@@ -82,16 +81,12 @@ href="http://yoursite.com/js/compressed.js">yoursite.com/js/compressed.js</a>+:
 </span>
   <span class='id register'>register</span> <span class='const'>Sinatra</span><span class='op'>::</span><span class='const'>JsSupport</span>
   <span class='id serve_js'>serve_js</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/js</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='label'>from:</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>./app/js</span><span class='tstring_end'>'</span></span>
-</pre>
-<p>
-Then load the <span class='object_link'><a href="" title="Sinatra::CompressedJS (module)">CompressedJS</a></span> plugin:
-</p>
-<pre class="code">
-  <span class='id register'>register</span> <span class='const'>Sinatra</span><span class='op'>::</span><span class='const'>CompressedJS</span>
-
+  
+  <span class='id register'>register</span> <span class='const'>Sinatra</span><span class='op'>::</span><span class='const'>CompressedJS</span>        <span class='comment'># Load the CompressedJS plugin
+</span>
   <span class='id serve_compressed_js'>serve_compressed_js</span> <span class='symbol'>:app_js</span><span class='comma'>,</span>          <span class='comment'># The name (used later in your views)
-</span>    <span class='symbol'>:prefix</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/js</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>                   <span class='comment'># Where the individual files can be accessed at
-</span>    <span class='symbol'>:root</span>   <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>./app/js</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>              <span class='comment'># The root of your files
+</span>    <span class='symbol'>:prefix</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/js</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>                   <span class='comment'># Where the individual JS files can be accessed at
+</span>    <span class='symbol'>:root</span>   <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>./app/js</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>              <span class='comment'># The root of your JS files
 </span>    <span class='symbol'>:path</span>   <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/js/compressed.js</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>     <span class='comment'># The URL where the compressed JS will served at
 </span>    <span class='symbol'>:files</span>  <span class='op'>=&gt;</span>                          <span class='comment'># List of files
 </span>      <span class='const'>Dir</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>./app/js/vendor/*.js</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span> <span class='op'>+</span>
@@ -102,15 +97,13 @@ Note that <tt>:prefix</tt> and <tt>:root</tt> are the same things passed
 onto <span class='object_link'><a href="JsSupport.html#serve_js-instance_method" title="Sinatra::JsSupport#serve_js (method)">serve_js</a></span>.
 </p>
 <p>
-In your template view, add this before <tt>&lt;/body&gt;</tt>:
+In your template view, add this before <tt>&lt;/body&gt;</tt>: (The name <tt>app_js</tt>
+comes from the first parameter passed to <span class='object_link'><a href="#serve_compressed_js-instance_method" title="Sinatra::CompressedJS#serve_compressed_js (method)">#serve_compressed_js</a></span>.)
 </p>
 <pre class="code">
   &lt;%= settings.app_js.to_html %&gt;
 </pre>
-<p>
-(The name <tt>app_js</tt> comes from the first parameter passed to
-<span class='object_link'><a href="#serve_compressed_js-instance_method" title="Sinatra::CompressedJS#serve_compressed_js (method)">#serve_compressed_js</a></span>.)
-</p>
+<h2>Example output</h2>
 <p>
 In development mode, this will probably output:
 </p>
@@ -142,10 +135,15 @@ add the approprate gem to your project.
   <span class='comment'># Gemfile
 </span>  <span class='id gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>coffee-script</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>require:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>coffee_script</span><span class='tstring_end'>&quot;</span></span>
 </pre>
+<h2>More functions</h2>
+<p>
+Doing <tt>settings.app_js</tt> returns a <span class='object_link'><a href="../JsFiles.html" title="JsFiles (class)">JsFiles</a></span> instance. See the
+<span class='object_link'><a href="../JsFiles.html" title="JsFiles (class)">JsFiles</a></span> class for more info on things you can do.
+</p>
 <h2>Caching</h2>
 <p>
 CompressedJS will cache compressed and combined scripts. This means that
-compression will only happen once.
+compression will only happen once in your application&#8217;s runtime.
 </p>
 <h2>Why no support for CSS compression?</h2>
 <p>
@@ -258,12 +256,12 @@ use something else.
       <pre class="lines">
 
 
-86
-87
-88</pre>
+90
+91
+92</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sinatra/support/compressedjs.rb', line 86</span>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/compressedjs.rb', line 90</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id registered'>registered</span><span class='lparen'>(</span><span class='id app'>app</span><span class='rparen'>)</span>
   <span class='id app'>app</span><span class='period'>.</span><span class='id set'>set</span> <span class='symbol'>:jsfiles_cache_max_age</span><span class='comma'>,</span> <span class='int'>86400</span><span class='op'>*</span><span class='int'>30</span>  <span class='kw'>unless</span> <span class='id app'>app</span><span class='period'>.</span><span class='id respond_to?'>respond_to?</span><span class='lparen'>(</span><span class='symbol'>:jsfile_cache_max_age</span><span class='rparen'>)</span>
@@ -292,16 +290,16 @@ use something else.
       <pre class="lines">
 
 
-90
-91
-92
-93
 94
 95
-96</pre>
+96
+97
+98
+99
+100</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sinatra/support/compressedjs.rb', line 90</span>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/compressedjs.rb', line 94</span>
 
 <span class='kw'>def</span> <span class='id serve_compressed_js'>serve_compressed_js</span><span class='lparen'>(</span><span class='id name'>name</span><span class='comma'>,</span> <span class='id options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id jsfiles'>jsfiles</span> <span class='op'>=</span> <span class='const'>JsFiles</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='id options'>options</span><span class='rparen'>)</span>
@@ -320,7 +318,7 @@ use something else.
 </div>
     
     <div id="footer">
-  Generated on Fri May 27 14:14:11 2011 by 
+  Generated on Fri May 27 14:31:33 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.6.8 (ruby-1.9.2).
 </div>

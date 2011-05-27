@@ -91,16 +91,30 @@ This is a general-purpose class usually used for minification of JS assets.
 This is often used with Sinatra, but can work with any other web framework.
 </p>
 <h3>Usage example</h3>
+<p>
+In Sinatra, doing CompressedJS#serve_compressed_js will make a JsFiles
+instance:
+</p>
 <pre class="code">
-  <span class='id files'>files</span>  <span class='op'>=</span> <span class='const'>Dir</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>public/js/jquery.*.js</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span>
-  <span class='id files'>files</span> <span class='op'>+=</span> <span class='const'>Dir</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>public/js/app.*.js</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span>
+  serve_compressed_js :js_files,
+    :prefix =&gt; '/javascript',
+    :path   =&gt; '/javascript/combined.js',
+    :root   =&gt; './app/js'
+    files   =&gt;
+      Dir['public/js/jquery.*.js'].sort +
+      Dir['public/js/app.*.js'].sort
 
+  js_files.is_a?(JsFiles)  #=&gt; true
+  js_files.mtime           #=&gt; (Time) 2010-09-02 8:00PM
+</pre>
+<p>
+Or outside Sinatra, just instanciate it as so:
+</p>
+<pre class="code">
   <span class='id js_files'>js_files</span> <span class='op'>=</span> <span class='const'>JsFiles</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='symbol'>:files</span> <span class='op'>=&gt;</span> <span class='id files'>files</span><span class='comma'>,</span>
     <span class='symbol'>:prefix</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/javascript</span><span class='tstring_end'>'</span></span><span class='comma'>,</span>
     <span class='symbol'>:root</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>./app/js</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
-
-  <span class='id js_files'>js_files</span><span class='period'>.</span><span class='id mtime'>mtime</span>  <span class='comment'>#=&gt; (Time) 2010-09-02 8:00PM
-</span></pre>
+</pre>
 <p>
 You can use #to_html in views:
 </p>
@@ -570,19 +584,19 @@ A list of string file paths.
       <pre class="lines">
 
 
-161
-162
-163
-164
-165
-166
-167
-168
-169
-170</pre>
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sinatra/support/compressedjs.rb', line 161</span>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/compressedjs.rb', line 176</span>
 
 <span class='kw'>def</span> <span class='id initialize'>initialize</span><span class='lparen'>(</span><span class='id options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='ivar'>@app</span>    <span class='op'>=</span> <span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:app</span><span class='rbracket'>]</span>
@@ -631,12 +645,12 @@ Returns the value of attribute app
       <pre class="lines">
 
 
-148
-149
-150</pre>
+163
+164
+165</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sinatra/support/compressedjs.rb', line 148</span>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/compressedjs.rb', line 163</span>
 
 <span class='kw'>def</span> <span class='id app'>app</span>
   <span class='ivar'>@app</span>
@@ -673,12 +687,12 @@ Returns the value of attribute files
       <pre class="lines">
 
 
-147
-148
-149</pre>
+162
+163
+164</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sinatra/support/compressedjs.rb', line 147</span>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/compressedjs.rb', line 162</span>
 
 <span class='kw'>def</span> <span class='id files'>files</span>
   <span class='ivar'>@files</span>
@@ -715,12 +729,12 @@ Returns the value of attribute path
       <pre class="lines">
 
 
-151
-152
-153</pre>
+166
+167
+168</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sinatra/support/compressedjs.rb', line 151</span>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/compressedjs.rb', line 166</span>
 
 <span class='kw'>def</span> <span class='id path'>path</span>
   <span class='ivar'>@path</span>
@@ -757,12 +771,12 @@ Returns the value of attribute prefix
       <pre class="lines">
 
 
-149
-150
-151</pre>
+164
+165
+166</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sinatra/support/compressedjs.rb', line 149</span>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/compressedjs.rb', line 164</span>
 
 <span class='kw'>def</span> <span class='id prefix'>prefix</span>
   <span class='ivar'>@prefix</span>
@@ -799,12 +813,12 @@ Returns the value of attribute root
       <pre class="lines">
 
 
-150
-151
-152</pre>
+165
+166
+167</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sinatra/support/compressedjs.rb', line 150</span>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/compressedjs.rb', line 165</span>
 
 <span class='kw'>def</span> <span class='id root'>root</span>
   <span class='ivar'>@root</span>
@@ -834,12 +848,12 @@ Returns the value of attribute root
       <pre class="lines">
 
 
-231
-232
-233</pre>
+246
+247
+248</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sinatra/support/compressedjs.rb', line 231</span>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/compressedjs.rb', line 246</span>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id compress'>compress</span><span class='lparen'>(</span><span class='id str'>str</span><span class='rparen'>)</span>
   <span class='const'>JSMin</span><span class='period'>.</span><span class='id minify'>minify</span><span class='lparen'>(</span><span class='id str'>str</span><span class='rparen'>)</span><span class='period'>.</span><span class='id strip'>strip</span>
@@ -879,16 +893,16 @@ Returns the combined source of all the files.
       <pre class="lines">
 
 
-217
-218
-219
-220
-221
-222
-223</pre>
+232
+233
+234
+235
+236
+237
+238</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sinatra/support/compressedjs.rb', line 217</span>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/compressedjs.rb', line 232</span>
 
 <span class='kw'>def</span> <span class='id combined'>combined</span>
   <span class='ivar'>@combined</span> <span class='op'>||=</span> <span class='ivar'>@files</span><span class='period'>.</span><span class='id map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id file'>file</span><span class='op'>|</span>
@@ -926,17 +940,17 @@ Returns a combined, minifed source of all the files.
       <pre class="lines">
 
 
-226
-227
-228
-229</pre>
+241
+242
+243
+244</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sinatra/support/compressedjs.rb', line 226</span>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/compressedjs.rb', line 241</span>
 
 <span class='kw'>def</span> <span class='id compressed'>compressed</span>
   <span class='id require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>jsmin</span><span class='tstring_end'>'</span></span>
-  <span class='ivar'>@compressed</span> <span class='op'>||=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id class'>class</span><span class='period'>.</span><span class='id compress'>compress</span><span class='lparen'>(</span><span class='id str'>str</span><span class='rparen'>)</span>
+  <span class='ivar'>@compressed</span> <span class='op'>||=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id class'>class</span><span class='period'>.</span><span class='id compress'>compress</span><span class='lparen'>(</span><span class='id combined'>combined</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -978,17 +992,17 @@ Returns a list of the URLs for the package.
       <pre class="lines">
 
 
-190
-191
-192
-193
-194
-195
-196
-197</pre>
+205
+206
+207
+208
+209
+210
+211
+212</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sinatra/support/compressedjs.rb', line 190</span>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/compressedjs.rb', line 205</span>
 
 <span class='kw'>def</span> <span class='id hrefs'>hrefs</span>
   <span class='ivar'>@files</span><span class='period'>.</span><span class='id map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id f'>f</span><span class='op'>|</span>
@@ -1046,12 +1060,12 @@ The last modified time of the most recent file.
       <pre class="lines">
 
 
-178
-179
-180</pre>
+193
+194
+195</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sinatra/support/compressedjs.rb', line 178</span>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/compressedjs.rb', line 193</span>
 
 <span class='kw'>def</span> <span class='id mtime'>mtime</span>
   <span class='ivar'>@files</span><span class='period'>.</span><span class='id map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id f'>f</span><span class='op'>|</span> <span class='const'>File</span><span class='period'>.</span><span class='id mtime'>mtime</span><span class='lparen'>(</span><span class='id f'>f</span><span class='rparen'>)</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id max'>max</span>
@@ -1085,12 +1099,12 @@ Returns the <script> tags for the development version.
       <pre class="lines">
 
 
-200
-201
-202</pre>
+215
+216
+217</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sinatra/support/compressedjs.rb', line 200</span>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/compressedjs.rb', line 215</span>
 
 <span class='kw'>def</span> <span class='id to_development_html'>to_development_html</span>
   <span class='id hrefs'>hrefs</span><span class='period'>.</span><span class='id map'>map</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id href'>href</span><span class='op'>|</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&lt;script type='text/javascript' src='</span><span class='embexpr_beg'>#{</span><span class='id href'>href</span><span class='rbrace'>}</span><span class='tstring_content'>'&gt;&lt;/script&gt;</span><span class='tstring_end'>&quot;</span></span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>\n</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
@@ -1124,12 +1138,12 @@ Returns the <script> tags, using development or production as needed.
       <pre class="lines">
 
 
-210
-211
-212</pre>
+225
+226
+227</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sinatra/support/compressedjs.rb', line 210</span>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/compressedjs.rb', line 225</span>
 
 <span class='kw'>def</span> <span class='id to_html'>to_html</span>
   <span class='id production?'>production?</span> <span class='op'>?</span> <span class='id to_production_html'>to_production_html</span> <span class='op'>:</span> <span class='id to_development_html'>to_development_html</span>
@@ -1163,12 +1177,12 @@ Returns the <script> tag for the production version.
       <pre class="lines">
 
 
-205
-206
-207</pre>
+220
+221
+222</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/sinatra/support/compressedjs.rb', line 205</span>
+      <pre class="code"><span class="info file"># File 'lib/sinatra/support/compressedjs.rb', line 220</span>
 
 <span class='kw'>def</span> <span class='id to_production_html'>to_production_html</span>
   <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&lt;script type='text/javascript' src='%s?%s'&gt;&lt;/script&gt;</span><span class='tstring_end'>&quot;</span></span> <span class='op'>%</span> <span class='lbracket'>[</span><span class='id path'>path</span><span class='comma'>,</span> <span class='id mtime'>mtime</span><span class='period'>.</span><span class='id to_i'>to_i</span><span class='rbracket'>]</span>
@@ -1183,7 +1197,7 @@ Returns the <script> tag for the production version.
 </div>
     
     <div id="footer">
-  Generated on Fri May 27 14:14:11 2011 by 
+  Generated on Fri May 27 14:31:33 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.6.8 (ruby-1.9.2).
 </div>
