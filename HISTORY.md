@@ -1,3 +1,9 @@
+v1.1.1 - May 27, 2011
+---------------------
+
+### Fixed:
+  * CssSupport: Fix issue where Sass files are not loaded
+
 v1.1.0 - May 27, 2011
 ---------------------
 
