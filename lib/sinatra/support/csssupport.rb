@@ -72,7 +72,7 @@ module Sinatra::CssSupport
     prefix = options[:from]
 
     get path do |name|
-      fname = Dir[File.join(prefix, "#{name}.{css,scss,less}")].first  or pass
+      fname = Dir[File.join(prefix, "#{name}.{css,sass,scss,less}")].first  or pass
 
       content_type :css, :charset => 'utf-8'
       last_modified css_mtime_for(prefix, fname)
@@ -80,7 +80,7 @@ module Sinatra::CssSupport
 
       if fname =~ /\.scss$/
         scss File.read(fname)
-      elsif fname =~ /\.scss$/
+      elsif fname =~ /\.sass$/
         sass File.read(fname)
       elsif fname =~ /\.less$/
         less File.read(fname)
