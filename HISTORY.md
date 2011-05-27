@@ -1,3 +1,9 @@
+v1.1.2 - May 27, 2011
+---------------------
+
+### Changed:
+  * Revise CompassSupport to not use config files (instead just use Compass.configuration)
+
 v1.1.1 - May 27, 2011
 ---------------------
 
