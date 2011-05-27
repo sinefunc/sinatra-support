@@ -1,3 +1,9 @@
+v1.1.3 - May 27, 2011
+---------------------
+
+### Added:
+  * `Sinatra::UserAgentHelpers` for browser detection
+
 v1.1.2 - May 27, 2011
 ---------------------
 
