@@ -1,3 +1,9 @@
+v1.2.0 - May 27, 2011
+---------------------
+
+### Added:
+  * `Sinatra::CompressedJS` for serving compressed JS files
+
 v1.1.3 - May 27, 2011
 ---------------------
 
