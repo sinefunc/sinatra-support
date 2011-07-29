@@ -53,7 +53,7 @@ class CompressedJSApp < Test::Unit::TestCase
     get '/js/yo.js'
     control = 'alert(2);';
 
-    assert_equal control, last_response.body.strip
+    assert_includes last_response.body.strip, control
   end
 
   test "compressed" do

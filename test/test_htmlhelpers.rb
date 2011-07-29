@@ -27,7 +27,7 @@ class HtmlHelpersTest < Test::Unit::TestCase
   
   test "h" do
     assert_equal "&lt;Foo&gt;", h("<Foo>")
-    assert_equal "&lt;Foo bar=&#39;baz&#39;&gt;", h("<Foo bar='baz'>")
+    assert_match /^&lt;Foo bar=&#.*?;baz&#.*?;&gt;$/, h("<Foo bar='baz'>")
     assert_equal "&lt;Foo bar=&quot;baz&quot;&gt;", h("<Foo bar=\"baz\">")
   end
 end
