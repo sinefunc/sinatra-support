@@ -65,12 +65,6 @@ module Sinatra::CompassSupport
   end
 
 private
-  def self.lol(app)
-    Compass.configuration do |c|
-      c.project_path = app.root
-      c.sass_dir     = app.views
-    end
-  end
 
   def self.add_compass_engine_options(app)
     options = Compass.sass_engine_options

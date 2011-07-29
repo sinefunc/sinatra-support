@@ -60,7 +60,8 @@ module Sinatra::MultiRender
       engines   = [*(options[:engine] || settings.multi_engines)].join(',')
 
       t = @template_cache.fetch template, options do
-        template = Dir["{#{paths}}/#{template}.{#{engines}}"].first  or raise Errno::ENOENT
+        spec = "{#{paths}}/#{template}.{#{engines}}"
+        template = Dir[spec].first  or raise Errno::ENOENT.new(spec)
 
         ext      = File.extname(template)[1..-1].to_sym
         options  = settings.send(ext).merge(options)  if settings.respond_to?(ext)

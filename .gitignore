@@ -7,3 +7,4 @@ rdoc
 /.yardoc
 /doc
 /.rvmrc
+/Gemfile.lock
