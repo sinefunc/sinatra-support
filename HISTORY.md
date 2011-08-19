@@ -1,3 +1,15 @@
+Latest version - Aug 19, 2011
+-----------------------------
+
+### Fixed:
+  * Fixed `Sinatra::CompressedJS` to link to the production version on 
+  production.
+
+### Misc changes:
+  * Make tests more forgiving to account for different Compass/CS/etc versions.
+  * Improve CompressedJS docs.
+  * Updated gem dependencies to have a required version.
+
 v1.2.0 - May 27, 2011
 ---------------------
 
