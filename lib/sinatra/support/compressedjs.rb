@@ -92,7 +92,7 @@ module Sinatra::CompressedJS
   end
 
   def serve_compressed_js(name, options={})
-    jsfiles = JsFiles.new(options)
+    jsfiles = JsFiles.new(options.merge(:app => self))
 
     set name.to_sym, jsfiles
 
