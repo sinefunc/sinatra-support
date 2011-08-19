@@ -1,6 +1,6 @@
 require File.expand_path('../helper', __FILE__)
 
-Encoding.default_external = 'utf-8'
+Encoding.default_external = 'utf-8'  if defined?(::Encoding)
 
 class CompassAppTest < Test::Unit::TestCase
   include Rack::Test::Methods
