@@ -2,11 +2,12 @@
 #
 # == Usage
 #
-#   require 'sinatra/support/module'
+#   require 'sinatra/support'
+#   # or require 'sinatra/support/appmodule'
 #   
 # Create a part of your application by placing the usual Sinatra directives
-# (@get@, @helpers@, @configure@, etc) in a module. Be sure to @include
-# Sinatra::AppModule@ first.
+# (@@get@@, @@helpers@@, @@configure@@, etc) in a module. Be sure to @@include
+# Sinatra::AppModule@@ first.
 #
 #   module LoginModule
 #     include Sinatra::AppModule

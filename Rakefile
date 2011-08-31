@@ -9,7 +9,7 @@ namespace :doc do
 
   task :deploy => :update do
     # http://github.com/rstacruz/git-update-ghpages
-    repo = env['REPO'] || "sinefunc/sinatra-support"
+    repo = ENV['REPO'] || "sinefunc/sinatra-support"
     system "git update-ghpages -i doc #{repo}"
   end
 end
