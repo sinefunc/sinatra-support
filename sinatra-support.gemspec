@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.description = "Sinatra-support includes many helpers for forms, errors and many amazing things."
   s.authors = ["Cyril David", "Rico Sta. Cruz"]
   s.email = ["cyx.ucron@gmail.com", "rico@sinefunc.com"]
-  s.homepage = "http://github.com/sinefunc/sinatra-support"
+  s.homepage = "http://sinefunc.com/sinatra-support"
 
   s.files = Dir["{lib,test}/**/*", "*.md", "Rakefile"].reject { |f| File.directory?(f) }
 
@@ -20,6 +20,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency "compass", "~> 0.11.5"
   s.add_development_dependency "coffee-script", "~> 2.1.1"
   s.add_development_dependency "jsmin", "~> 1.0.1"
+  s.add_development_dependency "i18n"
+  s.add_development_dependency "less"
 end
 
 # gem build *.gemspec
