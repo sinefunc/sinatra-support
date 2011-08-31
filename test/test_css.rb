@@ -12,21 +12,28 @@ class CssAppTest < Test::Unit::TestCase
     App.new
   end
 
+  def assert_css(css)
+    left  = last_response.body.gsub(/[ \r\n\t]+/m, '')
+    right = css.gsub(/[ \r\n\t]+/m, '')
+
+    assert_equal left, right
+
+  end
   test "sass" do
     get '/css/style-sass.css'
 
-    assert_equal "body, #sass {\n  color: #333333; }\n", last_response.body
+    assert_css "body, #sass {\n  color: #333333; }\n"
   end
 
   test "scss" do
     get '/css/style-scss.css'
 
-    assert_equal "body, #scss {\n  color: #333333; }\n", last_response.body
+    assert_css "body, #scss {\n  color: #333333; }\n"
   end
 
   test "less" do
     get '/css/style-less.css'
 
-    assert_equal "body, #less { color: #333333; }\n", last_response.body
+    assert_css "body, #less { color: #333333; }\n"
   end
 end
