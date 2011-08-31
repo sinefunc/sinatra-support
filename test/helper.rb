@@ -6,7 +6,7 @@ require 'haml'
 require 'mocha'
 require 'rack/test'
 require 'nokogiri'
-require 'sinatra'
+require 'sinatra/base'
 
 $:.unshift File.expand_path('../../lib', __FILE__)
 $:.unshift File.dirname(__FILE__)

@@ -15,6 +15,7 @@ module Sinatra
   autoload :MultiRender,     File.expand_path('../support/multirender', __FILE__)
   autoload :CompassSupport,  File.expand_path('../support/compasssupport', __FILE__)
   autoload :CompressedJS,    File.expand_path('../support/compressedjs', __FILE__)
+  autoload :AppModule,       File.expand_path('../support/appmodule', __FILE__)
 
   module Support
   end

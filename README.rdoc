@@ -18,6 +18,7 @@ time. Think of it as Rails's conveniences done the Sinatra way.
 [{Sinatra::MultiRender}]      Allow rendering from multiple view paths and auto-guessing template engines.
 [{Sinatra::CompassSupport}]   Adds support for the Compass CSS framework.
 [{Sinatra::CompressedJS}]     JavaScript compression.
+[{Sinatra::AppModule}]        Write parts of your application as a module.
 
 == Helpers
 

@@ -30,7 +30,6 @@
 #   # Gemfile
 #   gem "coffee-script", require: "coffee_script"
 #
-#
 module Sinatra::JsSupport
   def self.registered(app)
     app.set :js_max_age, app.development? ? 0 : 86400*30
