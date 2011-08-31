@@ -1,14 +1,20 @@
-Latest version - Aug 19, 2011
------------------------------
+v1.2.2 - Sep 01, 2011
+---------------------
+
+### Added:
+  * `Sinatra::AppModule` for writing partial applications as modules
+
+v1.2.1 - Aug 19, 2011
+---------------------
 
 ### Fixed:
   * Fixed `Sinatra::CompressedJS` to link to the production version on 
-  production.
+  production
 
 ### Misc changes:
-  * Make tests more forgiving to account for different Compass/CS/etc versions.
-  * Improve CompressedJS docs.
-  * Updated gem dependencies to have a required version.
+  * Make tests more forgiving to account for different Compass/CS/etc versions
+  * Improve CompressedJS docs
+  * Updated gem dependencies to have a required version
 
 v1.2.0 - May 27, 2011
 ---------------------
