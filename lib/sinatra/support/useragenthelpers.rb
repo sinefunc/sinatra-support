@@ -46,7 +46,7 @@ class UserAgent
   def webkit?()    product?('AppleWebKit'); end
   def chrome?()    product?('Chrome'); end
   def safari?()    product?('Safari') && !chrome?; end
-  def ios?()       product?('Safari') && product?('Mobile'); end
+  def ios?()       (product?('Safari') && product?('Mobile')) || detail?(/^iPad/, 'Mozilla') || detail?(/^iPhone/, 'Mozilla'); end # when using meta apple-mobile-web-app-capable, "Safari" will not be set
   def gecko?()     product?('Gecko'); end
   def opera?()     product?('Opera'); end
   def ie?()        detail?(/^MSIE/, 'Mozilla'); end
