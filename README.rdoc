@@ -82,7 +82,7 @@ Conditional helpers for HAML (+checked_if+, +hide_if+, etc):
 
 ==== Provided by {Sinatra::CountryHelpers}:
 
-  <select name="country"><%= country_choices %></select>
+  <select name="country"><%= select_options country_choices %></select>
 
 ==== Provided by {Sinatra::DateForms}:
 
