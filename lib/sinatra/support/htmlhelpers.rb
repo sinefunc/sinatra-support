@@ -30,6 +30,7 @@ module Sinatra::HtmlHelpers
   #
   #   select_options([['One', 1], ['Two', 2]])
   #   select_options([['One', 1], ['Two', 2]], 1)
+  #   select_options([['One', 1], ['Two', 2]], [1,2])
   #   select_options([['One', 1], ['Two', 2]], 1, '- Choose -')
   #
   #   # using it with the provided date helpers...
@@ -45,7 +46,9 @@ module Sinatra::HtmlHelpers
     pairs.unshift([prompt, '']) if prompt
 
     pairs.map { |label, value|
-      tag(:option, label, :value => value, :selected => (current == value))
+      selected = (current == value) if current.is_a? String
+      selected = (current.include? value) if current.is_a? Array
+      tag(:option, label, :value => value, :selected => selected )
     }.join("\n")
   end
 
